@@ -22,6 +22,9 @@ struct WorkoutsView: View {
                 }
                 .listRowBackground(workout.theme.mainColor)
             }
+            .onDelete { offsets in
+                workouts.remove(atOffsets: offsets)
+            }
         }
         .navigationTitle("Workouts")
         .toolbar {

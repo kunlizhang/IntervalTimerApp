@@ -17,7 +17,7 @@ struct TimerView: View {
                 .fill(workout.theme.mainColor)
             VStack {
                 TimerHeaderView(secondsElapsed: workoutTimer.secondsElapsed, secondsRemaining: workoutTimer.secondsRemaining, theme: workout.theme)
-                TimerTimerView(exercise: workoutTimer.currExercise, theme: workout.theme)
+                TimerTimerView(exerciseName: workoutTimer.currExercise, timeElapsed: workoutTimer.secondsElapsedForSection, timeTotal: workoutTimer.totalSectionTime, theme: workout.theme)
                 TimerFooterView(currExercise: workoutTimer.exerciseIndex + 1, totalExercises: workout.exercises.count, currSet: workoutTimer.setIndex + 1, totalSets: workout.sets, theme: workout.theme)
             }
         }
