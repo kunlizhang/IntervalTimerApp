@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TimerHeaderView: View {
-    let secondsElapsed: Int
-    let secondsRemaining: Int
+    let secondsElapsed: Double
+    let secondsRemaining: Double
     let theme: Theme
     
-    private var totalSeconds: Int {
+    private var totalSeconds: Double {
         secondsElapsed + secondsRemaining
     }
     private var progress: Double {
@@ -20,7 +20,7 @@ struct TimerHeaderView: View {
         return Double(secondsElapsed) / Double(totalSeconds)
     }
     private var minutesRemaining: Int {
-        secondsRemaining / 60
+        Int(secondsRemaining / 60)
     }
     
     var body: some View {
@@ -30,13 +30,13 @@ struct TimerHeaderView: View {
                 VStack(alignment: .leading) {
                     Text("Seconds Elapsed")
                         .font(.caption)
-                    Label("\(secondsElapsed)", systemImage: "hourglass.bottomhalf.fill")
+                    Label("\(Int(floor(secondsElapsed)))", systemImage: "hourglass.bottomhalf.fill")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining")
                         .font(.caption)
-                    Label("\(secondsRemaining)", systemImage: "hourglass.tophalf.fill")
+                    Label("\(Int(ceil(secondsRemaining)))", systemImage: "hourglass.tophalf.fill")
                 }
             }
         }

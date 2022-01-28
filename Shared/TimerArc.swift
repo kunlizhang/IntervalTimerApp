@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct TimerArc: Shape {
-    let timeElapsed: Int
-    let timeTotal: Int
+    let timeElapsed: Double
+    let timeTotal: Double
     
     private var endAngle: Angle {
-        Angle(degrees: 360.0 * Double(timeElapsed) / Double(timeTotal))
+        Angle(degrees: 360.0 * timeElapsed / timeTotal)
     }
     func path(in rect: CGRect) -> Path {
         let diameter = min(rect.size.width, rect.size.height) - 24

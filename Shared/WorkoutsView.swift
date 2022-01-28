@@ -24,6 +24,7 @@ struct WorkoutsView: View {
             }
             .onDelete { offsets in
                 workouts.remove(atOffsets: offsets)
+                saveAction()
             }
         }
         .navigationTitle("Workouts")
@@ -38,6 +39,7 @@ struct WorkoutsView: View {
         .sheet(isPresented: $isPresentingNewWorkoutView) {
             NavigationView {
                 DetailEditView(data: $newWorkoutData)
+                    .navigationTitle("New Workout")
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -49,12 +51,14 @@ struct WorkoutsView: View {
                             Button("Add") {
                                 let newWorkout = Workout(data: newWorkoutData)
                                 workouts.append(newWorkout)
+                                saveAction()
                                 isPresentingNewWorkoutView = false
                                 newWorkoutData = Workout.Data()
                             }
                         }
                     }
             }
+            .navigationTitle(Text("New Workout"))
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }

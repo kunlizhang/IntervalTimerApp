@@ -15,8 +15,8 @@ class WorkoutTimer: ObservableObject {
     }
     
     @Published var currExercise = ""
-    @Published var secondsElapsed = 0
-    @Published var secondsRemaining = 0
+    @Published var secondsElapsed = Double(0)
+    @Published var secondsRemaining = Double(0)
     private(set) var exercises: [Exercise] = []
     
     private(set) var lengthInMinutes: Int
@@ -33,11 +33,11 @@ class WorkoutTimer: ObservableObject {
     private var sets: Int
     private var lengthInSeconds: Int {((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))}
     
-    @Published var secondsElapsedForSection: Int = 0
+    @Published var secondsElapsedForSection: Double = 0
     @Published var setIndex: Int = 0
     @Published var exerciseIndex: Int = 0
     @Published var isResting: Bool = false
-    @Published var totalSectionTime: Int = 0
+    @Published var totalSectionTime: Double = 0
     private var startDate: Date?
     
     init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = []) {
@@ -46,7 +46,7 @@ class WorkoutTimer: ObservableObject {
         self.restBetweenSets = restBetweenSets
         self.sets = sets
         self.exercises = exercises.exercises
-        self.secondsRemaining = ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
+        self.secondsRemaining = Double(((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)))
         self.lengthInMinutes =  ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)) / 60
     }
     
@@ -67,16 +67,16 @@ class WorkoutTimer: ObservableObject {
     private func changeToExercise(at index: Int) {
         isResting = false
         secondsElapsedForSection = 0
-        totalSectionTime = workTime
+        totalSectionTime = Double(workTime)
         guard index < exercises.count else { return }
         exerciseIndex = index
         currExercise = exercises[exerciseIndex].name
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.secondsElapsedForSection += 1
-            self.secondsElapsed += 1
-            self.secondsRemaining -= 1
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
+            self.secondsElapsedForSection += self.frequency
+            self.secondsElapsed += self.frequency
+            self.secondsRemaining -= self.frequency
             
-            if self.secondsElapsedForSection == self.workTime {
+            if Int(floor(self.secondsElapsedForSection)) == self.workTime {
                 timer.invalidate()
                 
                 if self.exerciseIndex == self.exercises.count - 1 && self.setIndex < self.sets - 1 {
@@ -95,12 +95,12 @@ class WorkoutTimer: ObservableObject {
         isResting = true
         currExercise = "Rest"
         secondsElapsedForSection = 0
-        totalSectionTime = length
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.secondsElapsedForSection += 1
-            self.secondsElapsed += 1
-            self.secondsRemaining -= 1
-            if self.secondsElapsedForSection == length {
+        totalSectionTime = Double(length)
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
+            self.secondsElapsedForSection += self.frequency
+            self.secondsElapsed += self.frequency
+            self.secondsRemaining -= self.frequency
+            if Int(floor(self.secondsElapsedForSection)) == length {
                 timer.invalidate()
                 post()
             }
@@ -113,7 +113,7 @@ class WorkoutTimer: ObservableObject {
         self.restBetweenSets = restBetweenSets
         self.sets = sets
         self.exercises = exercises.exercises
-        self.secondsRemaining = ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
+        self.secondsRemaining = Double((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
         self.lengthInMinutes =  ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)) / 60
         currExercise = exercises[0].name
     }

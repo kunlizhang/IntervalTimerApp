@@ -10,8 +10,8 @@ import SwiftUI
 
 struct TimerTimerView: View {
     let exerciseName: String
-    let timeElapsed: Int
-    let timeTotal: Int
+    let timeElapsed: Double
+    let timeTotal: Double
     let theme: Theme
     
     var body: some View {
@@ -32,6 +32,6 @@ struct TimerTimerView: View {
 
 struct TimerTimerView_Preview: PreviewProvider {
     static var previews: some View {
-        TimerTimerView(exerciseName: "Pushups", timeElapsed: 3, timeTotal: 15, theme: .bubblegum)
+        TimerTimerView(exerciseName: "Pushups", timeElapsed: Double(3), timeTotal: Double(15), theme: .bubblegum)
     }
 }
