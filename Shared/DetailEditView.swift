@@ -10,7 +10,6 @@ import SwiftUI
 struct DetailEditView: View {
     @Binding var data: Workout.Data
     @State private var newExerciseName = ""
-    // @todo figure how to have a more permanent solution
     @State private var editExercises: EditMode = .inactive
     
     private var getSetsText: String {

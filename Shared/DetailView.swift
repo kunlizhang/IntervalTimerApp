@@ -23,7 +23,7 @@ struct DetailView: View {
                 HStack {
                     Label("Length", systemImage: "clock")
                     Spacer()
-                    Text("\(workout.workoutLength) minutes")
+                    Text(workout.lengthString)
                 }
                 .accessibilityElement(children: .combine)
                 HStack {

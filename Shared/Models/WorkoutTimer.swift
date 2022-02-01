@@ -35,7 +35,7 @@ class WorkoutTimer: ObservableObject {
     
     @Published var secondsElapsedForSection: Double = 0
     @Published var setIndex: Int = 0
-    @Published var exerciseIndex: Int = 0
+    @Published var exerciseIndex: Int = -1
     @Published var isResting: Bool = false
     @Published var totalSectionTime: Double = 0
     private var startDate: Date?
@@ -52,7 +52,6 @@ class WorkoutTimer: ObservableObject {
     
     func startWorkout() {
         timerStopped = false
-        self.exerciseIndex = 0
         self.setIndex = 0
         currExercise = "Ready?"
         totalSectionTime = 3
@@ -61,6 +60,7 @@ class WorkoutTimer: ObservableObject {
             self.secondsElapsedForSection += self.frequency
             if Int(floor(self.secondsElapsedForSection)) == 3 {
                 timer.invalidate()
+                self.exerciseIndex = 0
                 self.changeToExercise(at: 0)
             }
         }

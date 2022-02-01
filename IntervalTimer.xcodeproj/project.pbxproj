@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */; };
+		8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */; };
 		871E4280279A6D7A007AC0DE /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E427F279A6D7A007AC0DE /* Tests_iOS.swift */; };
 		871E4282279A6D7A007AC0DE /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4281279A6D7A007AC0DE /* Tests_iOSLaunchTests.swift */; };
 		871E428C279A6D7A007AC0DE /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E428B279A6D7A007AC0DE /* Tests_macOS.swift */; };
@@ -67,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkoutView.swift; sourceTree = "<group>"; };
 		871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerApp.swift; sourceTree = "<group>"; };
 		871E4268279A6D79007AC0DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		871E426E279A6D7A007AC0DE /* IntervalTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +160,7 @@
 				871E42B7279B0FDA007AC0DE /* TrailingIconLabelStyle.swift */,
 				871E42BA279B1314007AC0DE /* WorkoutsView.swift */,
 				87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */,
+				8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -375,6 +379,7 @@
 				879BCF0627A1ED7B002D25FD /* TimerFooterView.swift in Sources */,
 				871E42B8279B0FDA007AC0DE /* TrailingIconLabelStyle.swift in Sources */,
 				871E4291279A6D7A007AC0DE /* ContentView.swift in Sources */,
+				8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
 				871E428F279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
 				871E42B2279A7039007AC0DE /* Workout.swift in Sources */,
 				871E42C4279B2A08007AC0DE /* DetailEditView.swift in Sources */,
@@ -399,6 +404,7 @@
 				879BCF0727A1ED7B002D25FD /* TimerFooterView.swift in Sources */,
 				871E42B9279B0FDA007AC0DE /* TrailingIconLabelStyle.swift in Sources */,
 				871E4292279A6D7A007AC0DE /* ContentView.swift in Sources */,
+				8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
 				871E4290279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
 				871E42B3279A7039007AC0DE /* Workout.swift in Sources */,
 				871E42C5279B2A08007AC0DE /* DetailEditView.swift in Sources */,

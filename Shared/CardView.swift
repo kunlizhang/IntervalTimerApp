@@ -20,10 +20,10 @@ struct CardView: View {
                 Label("\(workout.exercises.count)", systemImage: "figure.walk")
                     .accessibilityLabel("\(workout.exercises.count) exercises")
                 Spacer()
-                Label("\(workout.workoutLength)", systemImage: "clock")
+                Label(workout.lengthString, systemImage: "clock")
                     .padding(.trailing, 20)
                     .labelStyle(.trailingIcon)
-                    .accessibilityLabel("\(workout.workoutLength) minutes")
+                    .accessibilityLabel(workout.lengthString)
             }
             .font(.caption)
         }

@@ -28,8 +28,15 @@ struct Workout: Identifiable, Codable {
         self.theme = theme
     }
     
-    public var workoutLength: Int {
-        return ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)) / 60
+    public var lengthString: String {
+        let timeInSeconds = ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
+        var seconds: String
+        if timeInSeconds % 60 < 10 {
+            seconds = "0\(timeInSeconds % 60)"
+        } else {
+            seconds = "\(timeInSeconds % 60)"
+        }
+        return "\(timeInSeconds/60):" + seconds
     }
 }
 

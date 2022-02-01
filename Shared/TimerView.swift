@@ -15,24 +15,24 @@ struct TimerView: View {
     }
     
     var body: some View {
-        VStack {
-            if working {
+        if working {
+            VStack {
                 TimerHeaderView(secondsElapsed: workoutTimer.secondsElapsed, secondsRemaining: workoutTimer.secondsRemaining, theme: workout.theme)
                 TimerTimerView(exerciseName: workoutTimer.currExercise, timeElapsed: workoutTimer.secondsElapsedForSection, timeTotal: workoutTimer.totalSectionTime, isResting: workoutTimer.isResting, theme: workout.theme)
                 TimerFooterView(currExercise: workoutTimer.exerciseIndex + 1, totalExercises: workout.exercises.count, currSet: workoutTimer.setIndex + 1, totalSets: workout.sets, exercises: workout.exercises, theme: workout.theme)
-            } else {
-                Text("Hi")
             }
+            .padding()
+            .onAppear {
+                workoutTimer.reset(workTime: workout.workTime, restTime: workout.restTime, restBetweenSets: workout.restBetweenSets, sets: workout.sets, exercises: workout.exercises)
+                workoutTimer.startWorkout()
+            }
+            .onDisappear {
+                workoutTimer.stopWorkout()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+        } else {
+            PostWorkoutView(workout: $workout)
         }
-        .padding()
-        .onAppear {
-            workoutTimer.reset(workTime: workout.workTime, restTime: workout.restTime, restBetweenSets: workout.restBetweenSets, sets: workout.sets, exercises: workout.exercises)
-            workoutTimer.startWorkout()
-        }
-        .onDisappear {
-            workoutTimer.stopWorkout()
-        }
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

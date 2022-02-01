@@ -12,6 +12,7 @@ struct WorkoutsView: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewWorkoutView = false
     @State private var newWorkoutData = Workout.Data()
+    @State private var moveWorkouts: EditMode = .inactive
     let saveAction: ()->Void
     
     var body: some View {
@@ -28,12 +29,23 @@ struct WorkoutsView: View {
                     CardView(workout: workout)
                 }
                 .listRowBackground(workout.theme.mainColor)
+                .onLongPressGesture {
+                    if moveWorkouts == .active {
+                        moveWorkouts = .inactive
+                    } else {
+                        moveWorkouts = .active
+                    }
+                }
             }
             .onDelete { offsets in
                 workouts.remove(atOffsets: offsets)
                 saveAction()
             }
+            .onMove {
+                workouts.move(fromOffsets: $0, toOffset: $1)
+            }
         }
+        .environment(\.editMode, $moveWorkouts)
         .navigationTitle("Workouts")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
