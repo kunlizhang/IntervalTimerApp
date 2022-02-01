@@ -16,6 +16,13 @@ struct WorkoutsView: View {
     
     var body: some View {
         List {
+            NavigationLink(
+                destination: NewQuickWorkoutView()
+                    .navigationTitle("New Quick Workout")
+            ) {
+                Text("Quick Workout")
+                    .font(.headline)
+            }
             ForEach($workouts) { $workout in
                 NavigationLink(destination: DetailView(workout: $workout) ) {
                     CardView(workout: workout)
@@ -29,12 +36,15 @@ struct WorkoutsView: View {
         }
         .navigationTitle("Workouts")
         .toolbar {
-            Button(action: {
-                isPresentingNewWorkoutView = true
-            }) {
-                Image(systemName: "plus")
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    isPresentingNewWorkoutView = true
+                }) {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("New Workout")
             }
-            .accessibilityLabel("New Workout")
+            
         }
         .sheet(isPresented: $isPresentingNewWorkoutView) {
             NavigationView {

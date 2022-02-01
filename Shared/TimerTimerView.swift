@@ -12,26 +12,39 @@ struct TimerTimerView: View {
     let exerciseName: String
     let timeElapsed: Double
     let timeTotal: Double
+    let isResting: Bool
     let theme: Theme
     
     var body: some View {
-        Circle()
-            .strokeBorder(lineWidth: 24)
-            .overlay {
-                Text(exerciseName)
-                    .font(.title)
+        ZStack {
+            if isResting {
+                Circle()
+                    .fill(Color.pink)
+            } else {
+                Circle()
+                    .fill(Color.green)
             }
-            .foregroundStyle(theme.accentColor)
-            .overlay {
-                TimerArc(timeElapsed: timeElapsed, timeTotal: timeTotal)
-                    .rotation(Angle(degrees: -90))
-                    .stroke(theme.mainColor, lineWidth: 12)
-            }
+            Circle()
+                .strokeBorder(theme.mainColor, lineWidth: 24)
+                .overlay {
+                    VStack {
+                        Text(exerciseName)
+                            .font(.largeTitle)
+                        Text("\(Int(ceil(timeTotal-timeElapsed)))")
+                            .font(.title)
+                    }
+                }
+                .overlay {
+                    TimerArc(timeElapsed: timeElapsed, timeTotal: timeTotal)
+                        .rotation(Angle(degrees: -90))
+                        .stroke(theme.accentColor, lineWidth: 12)
+                }
+        }
     }
 }
 
 struct TimerTimerView_Preview: PreviewProvider {
     static var previews: some View {
-        TimerTimerView(exerciseName: "Pushups", timeElapsed: Double(3), timeTotal: Double(15), theme: .bubblegum)
+        TimerTimerView(exerciseName: "Pushups", timeElapsed: Double(3), timeTotal: Double(15), isResting: false, theme: .navy)
     }
 }

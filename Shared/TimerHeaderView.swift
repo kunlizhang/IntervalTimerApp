@@ -17,10 +17,18 @@ struct TimerHeaderView: View {
     }
     private var progress: Double {
         guard totalSeconds > 0 else { return 1 }
+        guard secondsRemaining > 0 else { return 1 }
         return Double(secondsElapsed) / Double(totalSeconds)
     }
-    private var minutesRemaining: Int {
-        Int(secondsRemaining / 60)
+    
+    private func timeFormatString(timeInSeconds: Int) -> String {
+        var seconds: String
+        if timeInSeconds % 60 < 10 {
+            seconds = "0\(timeInSeconds % 60)"
+        } else {
+            seconds = "\(timeInSeconds % 60)"
+        }
+        return "\(timeInSeconds/60):" + seconds
     }
     
     var body: some View {
@@ -28,29 +36,33 @@ struct TimerHeaderView: View {
             ProgressView(value: progress)
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Seconds Elapsed")
+                    Text("Time Elapsed")
                         .font(.caption)
-                    Label("\(Int(floor(secondsElapsed)))", systemImage: "hourglass.bottomhalf.fill")
+                    Label(timeFormatString(timeInSeconds: Int(floor(secondsElapsed))), systemImage: "hourglass.bottomhalf.fill")
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Text("Seconds Remaining")
+                    Text("Time Remaining")
                         .font(.caption)
-                    Label("\(Int(ceil(secondsRemaining)))", systemImage: "hourglass.tophalf.fill")
+                    Label(timeFormatString(timeInSeconds: Int(ceil(secondsRemaining))), systemImage: "hourglass.tophalf.fill")
                 }
             }
         }
+        .foregroundColor(theme.accentColor)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Time remaining")
-        .accessibilityValue("\(minutesRemaining) minutes")
-        .padding([.top, .horizontal])
-        .foregroundColor(theme.accentColor)
+        .accessibilityValue(timeFormatString(timeInSeconds: Int(ceil(secondsRemaining))))
+        .padding()
+        .background {
+            RoundedRectangle(cornerRadius: 20)
+                .fill(theme.mainColor)
+        }
     }
 }
 
 struct TimerHeaderView_Preview: PreviewProvider {
     static var previews: some View {
-        TimerHeaderView(secondsElapsed: 60, secondsRemaining: 180, theme: .bubblegum)
+        TimerHeaderView(secondsElapsed: 60, secondsRemaining: 189, theme: .bubblegum)
             .previewLayout(.sizeThatFits)
     }
 }

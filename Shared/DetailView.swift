@@ -19,7 +19,6 @@ struct DetailView: View {
                 NavigationLink(destination: TimerView(workout: $workout)) {
                     Label("Start Workout", systemImage: "timer")
                         .font(.headline)
-                        .foregroundColor(.accentColor)
                 }
                 HStack {
                     Label("Length", systemImage: "clock")

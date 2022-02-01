@@ -1,30 +1,36 @@
 //
-//  DetailEditView.swift
+//  NewQuickWorkoutView.swift
 //  IntervalTimer
 //
-//  Created by Kunli Zhang on 21/01/22.
+//  Created by Kunli Zhang on 31/01/22.
 //
 
 import SwiftUI
 
-struct DetailEditView: View {
-    @Binding var data: Workout.Data
-    @State private var newExerciseName = ""
-    // @todo figure how to have a more permanent solution
-    @State private var editExercises: EditMode = .inactive
+struct NewQuickWorkoutView: View {
+    @State private var data = Workout.Data()
+    @State private var exerciseCount = Double(0)
+    @State private var workout = Workout(data: Workout.Data())
     
     private var getSetsText: String {
-        if (data.sets == 1) {
+        if data.sets == 1 {
             return "set"
         } else {
             return "sets"
         }
     }
     
+    private var getExercisesText: String {
+        if data.exercises.count == 1 {
+            return "exercise"
+        } else {
+            return "exercises"
+        }
+    }
+    
     var body: some View {
         Form {
             Section(header: Text("Workout Info")) {
-                TextField("Title", text: $data.title)
                 VStack {
                     HStack {
                         Slider(value: $data.sets, in: 1...10, step: 1) {
@@ -65,46 +71,42 @@ struct DetailEditView: View {
                     Text("\(Int(data.restTime))s off")
                         .accessibilityHidden(true)
                 }
-            }
-            Section(header: Text("Exercises (\(data.exercises.count))")) {
-                ForEach(data.exercises) { exercise in
-                    Text(exercise.name)
-                }
-                .onDelete { indices in
-                    data.exercises.remove(atOffsets: indices)
-                }
-                .onMove {
-                    data.exercises.move(fromOffsets: $0, toOffset: $1)
-                }
-                .onLongPressGesture {
-                    if editExercises == .active {
-                        editExercises = .inactive
-                    } else {
-                        editExercises = .active
-                    }
-                }
                 HStack {
-                    TextField("New Exercise", text: $newExerciseName)
-                    Button(action: {
-                        withAnimation {
-                            let exercise = Workout.Exercise(name: newExerciseName)
-                            data.exercises.append(exercise)
-                            newExerciseName = ""
-                        }
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel("Add exercise")
+                    Slider(value: Binding(
+                        get: { self.exerciseCount },
+                        set: { (newVal) in
+                            data.exercises = []
+                            for index in 1...Int(newVal) {
+                                data.exercises.append(Workout.Exercise(name: "Exercise \(index)"))
+                            }
+                            workout.update(from: data)
+                            self.exerciseCount = newVal
+                        }), in: 1...20, step: 1) {
+                        Text("Number of exercises")
                     }
-                    .disabled(newExerciseName.isEmpty)
+                    Spacer()
+                    Text("\(Int(self.exerciseCount)) \(getExercisesText)")
                 }
+            }
+            Section {
+                Button(action: {
+                    workout.update(from: data)
+                }, label: {
+                    Label("Set Changes", systemImage: "square.and.arrow.down")
+                })
+                .font(.headline)
+                NavigationLink(destination: TimerView(workout: $workout)) {
+                    Label("Start Workout", systemImage: "timer")
+                        .font(.headline)
+                }
+                .disabled(exerciseCount == 0)
             }
         }
-        .environment(\.editMode, $editExercises)
     }
 }
 
-struct DetailEditView_Preview: PreviewProvider {
+struct NewQuickWorkoutView_Preview: PreviewProvider {
     static var previews: some View {
-        DetailEditView(data: .constant(Workout.sampleData[0].data))
+        NewQuickWorkoutView()
     }
 }

@@ -26,7 +26,7 @@ class WorkoutTimer: ObservableObject {
     
     private var timer: Timer?
     private var frequency: TimeInterval { 1.0 / 60.0 }
-    private var timerStopped = false
+    @Published var timerStopped = false
     private var workTime: Int
     private var restTime: Int
     private var restBetweenSets: Int
@@ -52,9 +52,18 @@ class WorkoutTimer: ObservableObject {
     
     func startWorkout() {
         timerStopped = false
-        exerciseIndex = 0
-        setIndex = 0
-        changeToExercise(at: 0)
+        self.exerciseIndex = 0
+        self.setIndex = 0
+        currExercise = "Ready?"
+        totalSectionTime = 3
+        self.isResting = true
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
+            self.secondsElapsedForSection += self.frequency
+            if Int(floor(self.secondsElapsedForSection)) == 3 {
+                timer.invalidate()
+                self.changeToExercise(at: 0)
+            }
+        }
     }
     
     func stopWorkout() {
@@ -85,7 +94,7 @@ class WorkoutTimer: ObservableObject {
                 } else if self.exerciseIndex < self.exercises.count - 1 && self.setIndex < self.sets {
                     self.rest(length: self.restTime, post: {self.changeToExercise(at: self.exerciseIndex + 1)})
                 } else {
-                    return
+                    self.stopWorkout()
                 }
             }
         }
