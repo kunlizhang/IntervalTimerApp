@@ -65,7 +65,10 @@ struct DetailEditView: View {
                         .accessibilityHidden(true)
                 }
             }
-            Section(header: Text("Exercises (\(data.exercises.count))")) {
+            Section(
+                header: Text("Exercises (\(data.exercises.count))"),
+                footer: Text("Press and hold to rearrange exercises")
+            ) {
                 ForEach(data.exercises) { exercise in
                     Text(exercise.name)
                 }

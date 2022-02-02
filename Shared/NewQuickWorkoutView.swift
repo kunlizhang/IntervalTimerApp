@@ -88,7 +88,7 @@ struct NewQuickWorkoutView: View {
                     Text("\(Int(self.exerciseCount)) \(getExercisesText)")
                 }
             }
-            Section {
+            Section(footer: Text("Set changes before starting the workout")) {
                 Button(action: {
                     workout.update(from: data)
                 }, label: {

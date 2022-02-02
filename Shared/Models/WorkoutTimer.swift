@@ -126,69 +126,6 @@ class WorkoutTimer: ObservableObject {
         self.lengthInMinutes =  ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)) / 60
         currExercise = exercises[0].name
     }
-    
-    /*
-    private func changeToExercise(at index: Int) {
-        if index > 0 {
-            let previousExerciseIndex = index - 1
-            exercises[previousExerciseIndex].isCompleted = true
-        }
-        if index > self.exercises.count {
-            self.currSetIndex += 1
-        }
-        secondsElapsedForExercise = 0
-        guard currSetIndex < self.sets else { return }
-        
-        if index < exercises.count {
-            exerciseIndex = index
-        } else {
-            exerciseIndex = 0
-        }
-        currExercise = exerciseText
-        
-        secondsElapsed = (self.workTime + self.restTime) * (self.currSetIndex) * (self.exercises.count - 1) + (self.workTime + self.restTime) * (self.exerciseIndex - 1) + self.restBetweenSets * (self.currSetIndex)
-        secondsRemaining = lengthInSeconds - secondsElapsed
-        startDate = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] timer in
-            if let self = self, let startDate = self.startDate {
-                let secondsElapsed = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
-                self.update(secondsElapsed: Int(secondsElapsed))
-            }
-        }
-    }
-    
-    private func update(secondsElapsed: Int) {
-        secondsElapsedForExercise = secondsElapsed
-        self.secondsElapsed = (self.workTime + self.restTime) * (self.currSetIndex) * (self.exercises.count - 1) + (self.workTime + self.restTime) * (self.exerciseIndex - 1) + self.restBetweenSets * (self.currSetIndex) + secondsElapsedForExercise
-        guard secondsElapsed <= workTime else {
-            return
-        }
-        secondsRemaining = max(lengthInSeconds - self.secondsElapsed, 0)
-        
-        guard !timerStopped else { return }
-        
-        if secondsElapsedForExercise >= workTime {
-            if exerciseIndex >= exercises.count {
-                rest(secondsElapsed: secondsElapsed, lengthOfRest: restBetweenSets)
-            } else {
-                rest(secondsElapsed: secondsElapsed, lengthOfRest: restTime)
-            }
-            changeToExercise(at: exerciseIndex + 1)
-            exerciseChangedAction?()
-        }
-    }
-    
-    private func rest(secondsElapsed: Int, lengthOfRest: Int) {
-        self.isResting = true
-        startDate = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] timer in
-            if let self = self, let startDate = self.startDate {
-                
-            }
-        
-        }
-    }
-    */
 }
 
 extension Workout {

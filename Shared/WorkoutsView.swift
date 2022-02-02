@@ -17,32 +17,37 @@ struct WorkoutsView: View {
     
     var body: some View {
         List {
-            NavigationLink(
-                destination: NewQuickWorkoutView()
-                    .navigationTitle("New Quick Workout")
-            ) {
-                Text("Quick Workout")
-                    .font(.headline)
-            }
-            ForEach($workouts) { $workout in
-                NavigationLink(destination: DetailView(workout: $workout) ) {
-                    CardView(workout: workout)
+            Section {
+                NavigationLink(
+                    destination: NewQuickWorkoutView()
+                        .navigationTitle("New Quick Workout")
+                ) {
+                    Text("Quick Workout")
+                        .font(.headline)
                 }
-                .listRowBackground(workout.theme.mainColor)
-                .onLongPressGesture {
-                    if moveWorkouts == .active {
-                        moveWorkouts = .inactive
-                    } else {
-                        moveWorkouts = .active
+            }
+            Section(footer: Text("Tap and hold to rearrange workouts")) {
+                ForEach($workouts) { $workout in
+                    NavigationLink(destination: DetailView(workout: $workout) ) {
+                        CardView(workout: workout)
+                    }
+                    .listRowBackground(workout.theme.mainColor)
+                    .onLongPressGesture {
+                        if moveWorkouts == .active {
+                            moveWorkouts = .inactive
+                        } else {
+                            moveWorkouts = .active
+                        }
                     }
                 }
-            }
-            .onDelete { offsets in
-                workouts.remove(atOffsets: offsets)
-                saveAction()
-            }
-            .onMove {
-                workouts.move(fromOffsets: $0, toOffset: $1)
+                .onDelete { offsets in
+                    workouts.remove(atOffsets: offsets)
+                    saveAction()
+                }
+                .onMove {
+                    workouts.move(fromOffsets: $0, toOffset: $1)
+                    saveAction()
+                }
             }
         }
         .environment(\.editMode, $moveWorkouts)
@@ -57,6 +62,9 @@ struct WorkoutsView: View {
                 .accessibilityLabel("New Workout")
             }
             
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
         }
         .sheet(isPresented: $isPresentingNewWorkoutView) {
             NavigationView {
@@ -77,13 +85,11 @@ struct WorkoutsView: View {
                                 isPresentingNewWorkoutView = false
                                 newWorkoutData = Workout.Data()
                             }
+                            .disabled(newWorkoutData.exercises.count == 0 || newWorkoutData.title == "")
                         }
                     }
             }
             .navigationTitle(Text("New Workout"))
-        }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
         }
     }
 }
