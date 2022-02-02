@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 class WorkoutTimer: ObservableObject {
     
@@ -24,6 +25,7 @@ class WorkoutTimer: ObservableObject {
     /// A closure that is executed when the exercise changes
     var exerciseChangedAction: (() -> Void)?
     
+    /// For the main timer
     private var timer: Timer?
     private var frequency: TimeInterval { 1.0 / 60.0 }
     @Published var timerStopped = false
@@ -33,12 +35,18 @@ class WorkoutTimer: ObservableObject {
     private var sets: Int
     private var lengthInSeconds: Int {((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))}
     
+    /// Core published informatioon
     @Published var secondsElapsedForSection: Double = 0
     @Published var setIndex: Int = 0
     @Published var exerciseIndex: Int = -1
     @Published var isResting: Bool = false
     @Published var totalSectionTime: Double = 0
     private var startDate: Date?
+    
+    /// For the beeping countdown timer
+    private var countdownTimer: Timer = Timer()
+    let firstBeep: SystemSoundID = 1200
+    let secondBeep: SystemSoundID = 1209
     
     init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = []) {
         self.workTime = workTime
@@ -54,11 +62,12 @@ class WorkoutTimer: ObservableObject {
         timerStopped = false
         self.setIndex = 0
         currExercise = "Ready?"
-        totalSectionTime = 3
+        totalSectionTime = 5
         self.isResting = true
+        countdownBeep(length: 5)
         timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
             self.secondsElapsedForSection += self.frequency
-            if Int(floor(self.secondsElapsedForSection)) == 3 {
+            if Int(floor(self.secondsElapsedForSection)) == 5 {
                 timer.invalidate()
                 self.exerciseIndex = 0
                 self.changeToExercise(at: 0)
@@ -80,6 +89,7 @@ class WorkoutTimer: ObservableObject {
         guard index < exercises.count else { return }
         exerciseIndex = index
         currExercise = exercises[exerciseIndex].name
+        countdownBeep(length: workTime)
         timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
             self.secondsElapsedForSection += self.frequency
             self.secondsElapsed += self.frequency
@@ -87,7 +97,6 @@ class WorkoutTimer: ObservableObject {
             
             if Int(floor(self.secondsElapsedForSection)) == self.workTime {
                 timer.invalidate()
-                
                 if self.exerciseIndex == self.exercises.count - 1 && self.setIndex < self.sets - 1 {
                     self.rest(length: self.restBetweenSets, post: {self.setIndex += 1; self.changeToExercise(at: 0)})
                     
@@ -105,6 +114,7 @@ class WorkoutTimer: ObservableObject {
         currExercise = "Rest"
         secondsElapsedForSection = 0
         totalSectionTime = Double(length)
+        countdownBeep(length: length)
         timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
             self.secondsElapsedForSection += self.frequency
             self.secondsElapsed += self.frequency
@@ -112,6 +122,19 @@ class WorkoutTimer: ObservableObject {
             if Int(floor(self.secondsElapsedForSection)) == length {
                 timer.invalidate()
                 post()
+            }
+        }
+    }
+    
+    private func countdownBeep(length: Int) {
+        var count = 0
+        countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            count += 1
+            if count == length {
+                AudioServicesPlaySystemSound(self.secondBeep)
+                timer.invalidate()
+            } else if count >= length - 3 {
+                AudioServicesPlaySystemSound(self.firstBeep)
             }
         }
     }
