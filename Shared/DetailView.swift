@@ -15,11 +15,13 @@ struct DetailView: View {
     
     var body: some View {
         List {
-            Section(header: Text("Workout Info")) {
+            Section(footer: Text("Turn on ringer to hear sounds")) {
                 NavigationLink(destination: TimerView(workout: $workout)) {
-                    Label("Start Workout", systemImage: "timer")
+                    Label("Start Workout", systemImage: "timer")    
                         .font(.headline)
                 }
+            }
+            Section(header: Text("Workout Info")) {
                 HStack {
                     Label("Length", systemImage: "clock")
                     Spacer()

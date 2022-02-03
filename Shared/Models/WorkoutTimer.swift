@@ -77,6 +77,7 @@ class WorkoutTimer: ObservableObject {
     
     func stopWorkout() {
         timer?.invalidate()
+        countdownTimer.invalidate()
         timer = nil
         timerStopped = true
     }
@@ -130,7 +131,7 @@ class WorkoutTimer: ObservableObject {
         var count = 0
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             count += 1
-            if count == length {
+            if count >= length {
                 AudioServicesPlaySystemSound(self.secondBeep)
                 timer.invalidate()
             } else if count >= length - 3 {
