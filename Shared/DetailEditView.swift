@@ -23,7 +23,7 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             Section(header: Text("Workout Info")) {
-                TextField("Title", text: $data.title)
+                TextField("*Title", text: $data.title)
                 VStack {
                     HStack {
                         Slider(value: $data.sets, in: 1...10, step: 1) {

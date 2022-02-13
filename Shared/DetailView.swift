@@ -15,7 +15,7 @@ struct DetailView: View {
     
     var body: some View {
         List {
-            Section(footer: Text("Turn on ringer to hear sounds")) {
+            Section() {
                 NavigationLink(destination: TimerView(workout: $workout)) {
                     Label("Start Workout", systemImage: "timer")    
                         .font(.headline)

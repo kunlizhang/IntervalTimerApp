@@ -45,8 +45,11 @@ class WorkoutTimer: ObservableObject {
     
     /// For the beeping countdown timer
     private var countdownTimer: Timer = Timer()
-    let firstBeep: SystemSoundID = 1200
-    let secondBeep: SystemSoundID = 1209
+    let firstBeepURL = Bundle.main.url(forResource: "Beep1", withExtension: "mp3")!
+    let secondBeepURL = Bundle.main.url(forResource: "Beep2", withExtension: "mp3")!
+    
+    var firstBeepPlayer: AVAudioPlayer?
+    var secondBeepPlayer: AVAudioPlayer?
     
     init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = []) {
         self.workTime = workTime
@@ -132,10 +135,16 @@ class WorkoutTimer: ObservableObject {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             count += 1
             if count >= length {
-                AudioServicesPlaySystemSound(self.secondBeep)
+                do {
+                    self.secondBeepPlayer = try AVAudioPlayer(contentsOf: self.secondBeepURL)
+                    self.secondBeepPlayer?.play()
+                } catch { }
                 timer.invalidate()
             } else if count >= length - 3 {
-                AudioServicesPlaySystemSound(self.firstBeep)
+                do {
+                    self.firstBeepPlayer = try AVAudioPlayer(contentsOf: self.firstBeepURL)
+                    self.firstBeepPlayer?.play()
+                } catch { }
             }
         }
     }

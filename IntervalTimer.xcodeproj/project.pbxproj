@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */; };
 		8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */; };
+		870C237827B8944B008C1298 /* Beep2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870C237627B8944B008C1298 /* Beep2.mp3 */; };
+		870C237927B8944B008C1298 /* Beep2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870C237627B8944B008C1298 /* Beep2.mp3 */; };
+		870C237A27B8944B008C1298 /* Beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870C237727B8944B008C1298 /* Beep1.mp3 */; };
+		870C237B27B8944B008C1298 /* Beep1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870C237727B8944B008C1298 /* Beep1.mp3 */; };
 		871E4280279A6D7A007AC0DE /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E427F279A6D7A007AC0DE /* Tests_iOS.swift */; };
 		871E4282279A6D7A007AC0DE /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4281279A6D7A007AC0DE /* Tests_iOSLaunchTests.swift */; };
 		871E428C279A6D7A007AC0DE /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E428B279A6D7A007AC0DE /* Tests_macOS.swift */; };
@@ -17,8 +21,6 @@
 		871E4290279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */; };
 		871E4291279A6D7A007AC0DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4268279A6D79007AC0DE /* ContentView.swift */; };
 		871E4292279A6D7A007AC0DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4268279A6D79007AC0DE /* ContentView.swift */; };
-		871E42AB279A6F03007AC0DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E42AA279A6F03007AC0DE /* Assets.xcassets */; };
-		871E42AC279A6F03007AC0DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E42AA279A6F03007AC0DE /* Assets.xcassets */; };
 		871E42AE279A6FFF007AC0DE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42AD279A6FFE007AC0DE /* Theme.swift */; };
 		871E42AF279A6FFF007AC0DE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42AD279A6FFE007AC0DE /* Theme.swift */; };
 		871E42B2279A7039007AC0DE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42B1279A7039007AC0DE /* Workout.swift */; };
@@ -41,6 +43,8 @@
 		875CA5E5279DF6860037AA13 /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */; };
 		87724A4E27A315BB007C8628 /* TimerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87724A4D27A315BB007C8628 /* TimerTimerView.swift */; };
 		87724A4F27A315BB007C8628 /* TimerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87724A4D27A315BB007C8628 /* TimerTimerView.swift */; };
+		877C945D27B0A5E600DD7688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877C945C27B0A5E600DD7688 /* Assets.xcassets */; };
+		877C945E27B0A5E600DD7688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877C945C27B0A5E600DD7688 /* Assets.xcassets */; };
 		8789D81227A237450033DAD0 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789D81127A237450033DAD0 /* WorkoutStore.swift */; };
 		8789D81327A237450033DAD0 /* WorkoutStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8789D81127A237450033DAD0 /* WorkoutStore.swift */; };
 		879BCF0627A1ED7B002D25FD /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */; };
@@ -70,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkoutView.swift; sourceTree = "<group>"; };
+		870C237627B8944B008C1298 /* Beep2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep2.mp3; sourceTree = SOURCE_ROOT; };
+		870C237727B8944B008C1298 /* Beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep1.mp3; sourceTree = SOURCE_ROOT; };
 		871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerApp.swift; sourceTree = "<group>"; };
 		871E4268279A6D79007AC0DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		871E426E279A6D7A007AC0DE /* IntervalTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +87,6 @@
 		871E4287279A6D7A007AC0DE /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E428B279A6D7A007AC0DE /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		871E428D279A6D7A007AC0DE /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
-		871E42AA279A6F03007AC0DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Downloads/DrawingTheTimerView/Complete/Scrumdinger/Assets.xcassets; sourceTree = "<group>"; };
 		871E42AD279A6FFE007AC0DE /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		871E42B1279A7039007AC0DE /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		871E42B4279A7228007AC0DE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		875760A4279E36C9009AD86C /* WorkoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimer.swift; sourceTree = "<group>"; };
 		875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHeaderView.swift; sourceTree = "<group>"; };
 		87724A4D27A315BB007C8628 /* TimerTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTimerView.swift; sourceTree = "<group>"; };
+		877C945C27B0A5E600DD7688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8789D81127A237450033DAD0 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
 		87A17AB827A31DC0009B47F7 /* TimerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerArc.swift; sourceTree = "<group>"; };
@@ -146,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				871E42B0279A701E007AC0DE /* Models */,
-				871E42AA279A6F03007AC0DE /* Assets.xcassets */,
 				871E42B4279A7228007AC0DE /* CardView.swift */,
 				871E4268279A6D79007AC0DE /* ContentView.swift */,
 				871E42C3279B2A08007AC0DE /* DetailEditView.swift */,
@@ -161,6 +166,9 @@
 				871E42BA279B1314007AC0DE /* WorkoutsView.swift */,
 				87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */,
 				8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */,
+				870C237727B8944B008C1298 /* Beep1.mp3 */,
+				870C237627B8944B008C1298 /* Beep2.mp3 */,
+				877C945C27B0A5E600DD7688 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -338,7 +346,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				871E42AB279A6F03007AC0DE /* Assets.xcassets in Resources */,
+				877C945D27B0A5E600DD7688 /* Assets.xcassets in Resources */,
+				870C237A27B8944B008C1298 /* Beep1.mp3 in Resources */,
+				870C237827B8944B008C1298 /* Beep2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +356,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				871E42AC279A6F03007AC0DE /* Assets.xcassets in Resources */,
+				877C945E27B0A5E600DD7688 /* Assets.xcassets in Resources */,
+				870C237B27B8944B008C1298 /* Beep1.mp3 in Resources */,
+				870C237927B8944B008C1298 /* Beep2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
