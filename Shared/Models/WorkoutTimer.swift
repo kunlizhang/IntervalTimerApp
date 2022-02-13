@@ -48,10 +48,18 @@ class WorkoutTimer: ObservableObject {
     let firstBeepURL = Bundle.main.url(forResource: "Beep1", withExtension: "mp3")!
     let secondBeepURL = Bundle.main.url(forResource: "Beep2", withExtension: "mp3")!
     
-    var firstBeepPlayer: AVAudioPlayer?
-    var secondBeepPlayer: AVAudioPlayer?
+    var beepPlayer: AVAudioPlayer?
+    
+    let audioSession = AVAudioSession.sharedInstance()
     
     init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = []) {
+        do {
+            // Set the audio session category, mode, and options.
+            try audioSession.setCategory(.playback)
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set audio session category.")
+        }
         self.workTime = workTime
         self.restTime = restTime
         self.restBetweenSets = restBetweenSets
@@ -136,20 +144,27 @@ class WorkoutTimer: ObservableObject {
             count += 1
             if count >= length {
                 do {
-                    self.secondBeepPlayer = try AVAudioPlayer(contentsOf: self.secondBeepURL)
-                    self.secondBeepPlayer?.play()
+                    self.beepPlayer = try AVAudioPlayer(contentsOf: self.secondBeepURL)
+                    self.beepPlayer?.play()
                 } catch { }
                 timer.invalidate()
             } else if count >= length - 3 {
                 do {
-                    self.firstBeepPlayer = try AVAudioPlayer(contentsOf: self.firstBeepURL)
-                    self.firstBeepPlayer?.play()
+                    self.beepPlayer = try AVAudioPlayer(contentsOf: self.firstBeepURL)
+                    self.beepPlayer?.play()
                 } catch { }
             }
         }
     }
     
     func reset(workTime: Int, restTime: Int, restBetweenSets: Int, sets: Int, exercises: [Workout.Exercise]) {
+        do {
+            // Set the audio session category, mode, and options.
+            try audioSession.setCategory(.playback)
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set audio session category.")
+        }
         self.workTime = workTime
         self.restTime = restTime
         self.restBetweenSets = restBetweenSets
