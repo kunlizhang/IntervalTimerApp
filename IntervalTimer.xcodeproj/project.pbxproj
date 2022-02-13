@@ -78,7 +78,7 @@
 		870C237727B8944B008C1298 /* Beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep1.mp3; sourceTree = SOURCE_ROOT; };
 		871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerApp.swift; sourceTree = "<group>"; };
 		871E4268279A6D79007AC0DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		871E426E279A6D7A007AC0DE /* IntervalTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		871E426E279A6D7A007AC0DE /* Interval Timer | HIIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer | HIIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E4274279A6D7A007AC0DE /* IntervalTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E4276279A6D7A007AC0DE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		871E427B279A6D7A007AC0DE /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +176,7 @@
 		871E426F279A6D7A007AC0DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				871E426E279A6D7A007AC0DE /* IntervalTimer.app */,
+				871E426E279A6D7A007AC0DE /* Interval Timer | HIIT.app */,
 				871E4274279A6D7A007AC0DE /* IntervalTimer.app */,
 				871E427B279A6D7A007AC0DE /* Tests iOS.xctest */,
 				871E4287279A6D7A007AC0DE /* Tests macOS.xctest */,
@@ -238,7 +238,7 @@
 			);
 			name = "IntervalTimer (iOS)";
 			productName = "IntervalTimer (iOS)";
-			productReference = 871E426E279A6D7A007AC0DE /* IntervalTimer.app */;
+			productReference = 871E426E279A6D7A007AC0DE /* Interval Timer | HIIT.app */;
 			productType = "com.apple.product-type.application";
 		};
 		871E4273279A6D7A007AC0DE /* IntervalTimer (macOS) */ = {
@@ -594,9 +594,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
-				PRODUCT_NAME = IntervalTimer;
+				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -624,9 +624,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
-				PRODUCT_NAME = IntervalTimer;
+				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
