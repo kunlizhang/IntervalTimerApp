@@ -13,13 +13,22 @@ struct TimerView: View {
     private var working: Bool {
         !workoutTimer.timerStopped
     }
+    private var nextText: String {
+        if workoutTimer.exerciseIndex + 1 < workout.exercises.count && workoutTimer.setIndex <= workout.sets {
+            return "Next exercise: \(workout.exercises[workoutTimer.exerciseIndex + 1].name)"
+        } else if workoutTimer.setIndex < workout.sets {
+            return "Next exercise: \(workout.exercises[0].name)"
+        } else {
+            return "Last exercise!"
+        }
+    }
     
     var body: some View {
         if working {
             VStack {
                 TimerHeaderView(secondsElapsed: workoutTimer.secondsElapsed, secondsRemaining: workoutTimer.secondsRemaining, theme: workout.theme)
-                TimerTimerView(exerciseName: workoutTimer.currExercise, timeElapsed: workoutTimer.secondsElapsedForSection, timeTotal: workoutTimer.totalSectionTime, isResting: workoutTimer.isResting, theme: workout.theme)
-                TimerFooterView(currExercise: workoutTimer.exerciseIndex + 1, totalExercises: workout.exercises.count, currSet: workoutTimer.setIndex + 1, totalSets: workout.sets, exercises: workout.exercises, theme: workout.theme)
+                TimerTimerView(exerciseName: workoutTimer.currExercise, timeElapsed: workoutTimer.secondsElapsedForSection, timeTotal: workoutTimer.totalSectionTime, isResting: workoutTimer.isResting, nextText: nextText, theme: workout.theme)
+                TimerFooterView(currExercise: workoutTimer.exerciseIndex + 1, totalExercises: workout.exercises.count, currSet: workoutTimer.setIndex + 1, totalSets: workout.sets, theme: workout.theme)
             }
             .padding()
             .onAppear {

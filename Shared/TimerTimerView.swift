@@ -13,6 +13,7 @@ struct TimerTimerView: View {
     let timeElapsed: Double
     let timeTotal: Double
     let isResting: Bool
+    let nextText: String
     let theme: Theme
     
     var body: some View {
@@ -32,6 +33,10 @@ struct TimerTimerView: View {
                             .font(.largeTitle)
                         Text("\(Int(ceil(timeTotal-timeElapsed)))")
                             .font(.title)
+                        if isResting {
+                            Text(nextText)
+                                .font(.title2)
+                        }
                     }
                 }
                 .overlay {
@@ -45,6 +50,6 @@ struct TimerTimerView: View {
 
 struct TimerTimerView_Preview: PreviewProvider {
     static var previews: some View {
-        TimerTimerView(exerciseName: "Pushups", timeElapsed: Double(3), timeTotal: Double(15), isResting: false, theme: .navy)
+        TimerTimerView(exerciseName: "Pushups", timeElapsed: Double(3), timeTotal: Double(15), isResting: false, nextText: "Situps", theme: .navy)
     }
 }

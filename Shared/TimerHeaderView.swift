@@ -37,14 +37,16 @@ struct TimerHeaderView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text("Time Elapsed")
-                        .font(.caption)
+                        .font(.headline)
                     Label(timeFormatString(timeInSeconds: Int(floor(secondsElapsed))), systemImage: "hourglass.bottomhalf.fill")
+                        .font(.title2)
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("Time Remaining")
-                        .font(.caption)
+                        .font(.headline)
                     Label(timeFormatString(timeInSeconds: Int(ceil(secondsRemaining))), systemImage: "hourglass.tophalf.fill")
+                        .font(.title2)
                 }
             }
         }
