@@ -20,8 +20,6 @@ class WorkoutTimer: ObservableObject {
     @Published var secondsRemaining = Double(0)
     private(set) var exercises: [Exercise] = []
     
-    private(set) var lengthInMinutes: Int
-    
     /// A closure that is executed when the exercise changes
     var exerciseChangedAction: (() -> Void)?
     
@@ -33,6 +31,7 @@ class WorkoutTimer: ObservableObject {
     private var restTime: Int
     private var restBetweenSets: Int
     private var sets: Int
+    private var beepTime: Int
     private var lengthInSeconds: Int {((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))}
     
     /// Core published informatioon
@@ -52,7 +51,7 @@ class WorkoutTimer: ObservableObject {
     
     let audioSession = AVAudioSession.sharedInstance()
     
-    init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = []) {
+    init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = [], beepTime: Settings.BeepLength = Settings.BeepLength.threeSec) {
         do {
             // Set the audio session category, mode, and options.
             try audioSession.setCategory(.playback)
@@ -66,7 +65,12 @@ class WorkoutTimer: ObservableObject {
         self.sets = sets
         self.exercises = exercises.exercises
         self.secondsRemaining = Double(((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)))
-        self.lengthInMinutes =  ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)) / 60
+        switch (beepTime) {
+        case .threeSec:
+            self.beepTime = 3
+        case .fiveSec:
+            self.beepTime = 5
+        }
     }
     
     func startWorkout() {
@@ -148,7 +152,7 @@ class WorkoutTimer: ObservableObject {
                     self.beepPlayer?.play()
                 } catch { }
                 timer.invalidate()
-            } else if count >= length - 3 {
+            } else if count >= length - self.beepTime {
                 do {
                     self.beepPlayer = try AVAudioPlayer(contentsOf: self.firstBeepURL)
                     self.beepPlayer?.play()
@@ -157,7 +161,7 @@ class WorkoutTimer: ObservableObject {
         }
     }
     
-    func reset(workTime: Int, restTime: Int, restBetweenSets: Int, sets: Int, exercises: [Workout.Exercise]) {
+    func reset(workTime: Int, restTime: Int, restBetweenSets: Int, sets: Int, exercises: [Workout.Exercise], beepTime: Settings.BeepLength) {
         do {
             // Set the audio session category, mode, and options.
             try audioSession.setCategory(.playback)
@@ -171,7 +175,12 @@ class WorkoutTimer: ObservableObject {
         self.sets = sets
         self.exercises = exercises.exercises
         self.secondsRemaining = Double((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
-        self.lengthInMinutes =  ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)) / 60
+        switch (beepTime) {
+        case .threeSec:
+            self.beepTime = 3
+        case .fiveSec:
+            self.beepTime = 5
+        }
         currExercise = exercises[0].name
     }
 }

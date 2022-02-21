@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var workout: Workout
+    @Binding var settings: Settings
     
     @State private var data = Workout.Data()
     @State private var isPresentingEditView = false
@@ -16,7 +17,7 @@ struct DetailView: View {
     var body: some View {
         List {
             Section() {
-                NavigationLink(destination: TimerView(workout: $workout)) {
+                NavigationLink(destination: TimerView(workout: $workout, settings: $settings)) {
                     Label("Start Workout", systemImage: "timer")    
                         .font(.headline)
                 }
@@ -91,7 +92,7 @@ struct DetailView: View {
 struct DetailView_Preview: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            DetailView(workout: .constant(Workout.sampleData[0]))
+            DetailView(workout: .constant(Workout.sampleData[0]), settings: .constant(Settings()))
         }
     }
 }

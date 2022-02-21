@@ -22,7 +22,7 @@ struct WorkoutsView: View {
         List {
             Section {
                 NavigationLink(
-                    destination: NewQuickWorkoutView()
+                    destination: NewQuickWorkoutView(settings: $settings)
                         .navigationTitle("New Quick Workout")
                 ) {
                     Text("Quick Workout")
@@ -31,7 +31,7 @@ struct WorkoutsView: View {
             }
             Section(footer: Text("Tap and hold to rearrange workouts")) {
                 ForEach($workouts) { $workout in
-                    NavigationLink(destination: DetailView(workout: $workout) ) {
+                    NavigationLink(destination: DetailView(workout: $workout, settings: $settings) ) {
                         CardView(workout: workout)
                     }
                     .listRowBackground(workout.theme.mainColor)
@@ -68,7 +68,7 @@ struct WorkoutsView: View {
                 Button(action: {
                     isPresentingSettingsView = true
                 }) {
-                    Image(systemName: "gear")
+                    Image(systemName: "gearshape.fill")
                 }
             }
         }
@@ -112,6 +112,7 @@ struct WorkoutsView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Save") {
                                 settingsSaveAction()
+                                isPresentingSettingsView = false
                             }
                         }
                     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TimerView: View {
     @Binding var workout: Workout
+    @Binding var settings: Settings
     @StateObject var workoutTimer = WorkoutTimer()
     private var working: Bool {
         !workoutTimer.timerStopped
@@ -32,7 +33,7 @@ struct TimerView: View {
             }
             .padding()
             .onAppear {
-                workoutTimer.reset(workTime: workout.workTime, restTime: workout.restTime, restBetweenSets: workout.restBetweenSets, sets: workout.sets, exercises: workout.exercises)
+                workoutTimer.reset(workTime: workout.workTime, restTime: workout.restTime, restBetweenSets: workout.restBetweenSets, sets: workout.sets, exercises: workout.exercises, beepTime: settings.beepLength)
                 workoutTimer.startWorkout()
             }
             .onDisappear {
@@ -47,6 +48,6 @@ struct TimerView: View {
 
 struct TimerView_Preview: PreviewProvider {
     static var previews: some View {
-        TimerView(workout: .constant(Workout.sampleData[0]))
+        TimerView(workout: .constant(Workout.sampleData[0]), settings: .constant(Settings()))
     }
 }

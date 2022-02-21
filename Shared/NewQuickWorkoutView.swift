@@ -11,6 +11,7 @@ struct NewQuickWorkoutView: View {
     @State private var data = Workout.Data()
     @State private var exerciseCount = Double(0)
     @State private var workout = Workout(data: Workout.Data())
+    @Binding var settings: Settings
     
     private var getSetsText: String {
         if data.sets == 1 {
@@ -95,7 +96,7 @@ struct NewQuickWorkoutView: View {
                     Label("Set Changes", systemImage: "square.and.arrow.down")
                 })
                 .font(.headline)
-                NavigationLink(destination: TimerView(workout: $workout)) {
+                NavigationLink(destination: TimerView(workout: $workout, settings: $settings)) {
                     Label("Start Workout", systemImage: "timer")
                         .font(.headline)
                 }
@@ -107,6 +108,6 @@ struct NewQuickWorkoutView: View {
 
 struct NewQuickWorkoutView_Preview: PreviewProvider {
     static var previews: some View {
-        NewQuickWorkoutView()
+        NewQuickWorkoutView(settings: .constant(Settings()))
     }
 }

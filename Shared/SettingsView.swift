@@ -13,7 +13,7 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
-                Picker("Beep", selection: $settings.beepLength) {
+                Picker("Beep countdown", selection: $settings.beepLength) {
                     Text("3 seconds").tag(Settings.BeepLength.threeSec)
                     Text("5 seconds").tag(Settings.BeepLength.fiveSec)
                 }
