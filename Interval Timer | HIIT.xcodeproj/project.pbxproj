@@ -51,6 +51,12 @@
 		879BCF0727A1ED7B002D25FD /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */; };
 		87A17AB927A31DC0009B47F7 /* TimerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A17AB827A31DC0009B47F7 /* TimerArc.swift */; };
 		87A17ABA27A31DC0009B47F7 /* TimerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A17AB827A31DC0009B47F7 /* TimerArc.swift */; };
+		87CACC1327C337FC006ED6E9 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1227C337FC006ED6E9 /* SettingsStore.swift */; };
+		87CACC1427C337FC006ED6E9 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1227C337FC006ED6E9 /* SettingsStore.swift */; };
+		87CACC1627C3384D006ED6E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1527C3384D006ED6E9 /* Settings.swift */; };
+		87CACC1727C3384D006ED6E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1527C3384D006ED6E9 /* Settings.swift */; };
+		87CACC1927C33EC6006ED6E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1827C33EC6006ED6E9 /* SettingsView.swift */; };
+		87CACC1A27C33EC6006ED6E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1827C33EC6006ED6E9 /* SettingsView.swift */; };
 		87D77E0F27A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */; };
 		87D77E1027A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +108,9 @@
 		8789D81127A237450033DAD0 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
 		87A17AB827A31DC0009B47F7 /* TimerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerArc.swift; sourceTree = "<group>"; };
+		87CACC1227C337FC006ED6E9 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		87CACC1527C3384D006ED6E9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		87CACC1827C33EC6006ED6E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuickWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,17 +160,13 @@
 		871E4266279A6D79007AC0DE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				87CACC1127C33627006ED6E9 /* Timer */,
 				871E42B0279A701E007AC0DE /* Models */,
 				871E42B4279A7228007AC0DE /* CardView.swift */,
 				871E4268279A6D79007AC0DE /* ContentView.swift */,
 				871E42C3279B2A08007AC0DE /* DetailEditView.swift */,
 				871E42BD279B20F3007AC0DE /* DetailView.swift */,
 				871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */,
-				87A17AB827A31DC0009B47F7 /* TimerArc.swift */,
-				875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */,
-				871E42C0279B2731007AC0DE /* TimerView.swift */,
-				87724A4D27A315BB007C8628 /* TimerTimerView.swift */,
-				879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */,
 				871E42B7279B0FDA007AC0DE /* TrailingIconLabelStyle.swift */,
 				871E42BA279B1314007AC0DE /* WorkoutsView.swift */,
 				87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */,
@@ -169,6 +174,7 @@
 				870C237727B8944B008C1298 /* Beep1.mp3 */,
 				870C237627B8944B008C1298 /* Beep2.mp3 */,
 				877C945C27B0A5E600DD7688 /* Assets.xcassets */,
+				87CACC1827C33EC6006ED6E9 /* SettingsView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -217,8 +223,22 @@
 				871E42AD279A6FFE007AC0DE /* Theme.swift */,
 				871E42B1279A7039007AC0DE /* Workout.swift */,
 				8789D81127A237450033DAD0 /* WorkoutStore.swift */,
+				87CACC1227C337FC006ED6E9 /* SettingsStore.swift */,
+				87CACC1527C3384D006ED6E9 /* Settings.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		87CACC1127C33627006ED6E9 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				87A17AB827A31DC0009B47F7 /* TimerArc.swift */,
+				875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */,
+				871E42C0279B2731007AC0DE /* TimerView.swift */,
+				87724A4D27A315BB007C8628 /* TimerTimerView.swift */,
+				879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CACC1927C33EC6006ED6E9 /* SettingsView.swift in Sources */,
 				87A17AB927A31DC0009B47F7 /* TimerArc.swift in Sources */,
 				87D77E0F27A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */,
 				871E42C1279B2732007AC0DE /* TimerView.swift in Sources */,
@@ -394,8 +415,10 @@
 				8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
 				871E428F279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
 				871E42B2279A7039007AC0DE /* Workout.swift in Sources */,
+				87CACC1327C337FC006ED6E9 /* SettingsStore.swift in Sources */,
 				871E42C4279B2A08007AC0DE /* DetailEditView.swift in Sources */,
 				871E42BB279B1314007AC0DE /* WorkoutsView.swift in Sources */,
+				87CACC1627C3384D006ED6E9 /* Settings.swift in Sources */,
 				875760A5279E36C9009AD86C /* WorkoutTimer.swift in Sources */,
 				87724A4E27A315BB007C8628 /* TimerTimerView.swift in Sources */,
 				8789D81227A237450033DAD0 /* WorkoutStore.swift in Sources */,
@@ -408,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CACC1A27C33EC6006ED6E9 /* SettingsView.swift in Sources */,
 				87A17ABA27A31DC0009B47F7 /* TimerArc.swift in Sources */,
 				87D77E1027A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */,
 				871E42C2279B2732007AC0DE /* TimerView.swift in Sources */,
@@ -419,8 +443,10 @@
 				8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
 				871E4290279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
 				871E42B3279A7039007AC0DE /* Workout.swift in Sources */,
+				87CACC1427C337FC006ED6E9 /* SettingsStore.swift in Sources */,
 				871E42C5279B2A08007AC0DE /* DetailEditView.swift in Sources */,
 				871E42BC279B1314007AC0DE /* WorkoutsView.swift in Sources */,
+				87CACC1727C3384D006ED6E9 /* Settings.swift in Sources */,
 				875760A6279E36C9009AD86C /* WorkoutTimer.swift in Sources */,
 				87724A4F27A315BB007C8628 /* TimerTimerView.swift in Sources */,
 				8789D81327A237450033DAD0 /* WorkoutStore.swift in Sources */,
@@ -594,7 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
 				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;
@@ -624,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
 				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;

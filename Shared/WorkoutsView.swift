@@ -9,11 +9,14 @@ import SwiftUI
 
 struct WorkoutsView: View {
     @Binding var workouts: [Workout]
+    @Binding var settings: Settings
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewWorkoutView = false
+    @State private var isPresentingSettingsView = false
     @State private var newWorkoutData = Workout.Data()
     @State private var moveWorkouts: EditMode = .inactive
-    let saveAction: ()->Void
+    let saveAction: () -> Void
+    let settingsSaveAction: () -> Void
     
     var body: some View {
         List {
@@ -61,7 +64,13 @@ struct WorkoutsView: View {
                 }
                 .accessibilityLabel("New Workout")
             }
-            
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    isPresentingSettingsView = true
+                }) {
+                    Image(systemName: "gear")
+                }
+            }
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
@@ -69,7 +78,7 @@ struct WorkoutsView: View {
         .sheet(isPresented: $isPresentingNewWorkoutView) {
             NavigationView {
                 DetailEditView(data: $newWorkoutData)
-                    .navigationTitle("New Workout")
+                    .navigationTitle(Text("New Workout"))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -89,17 +98,32 @@ struct WorkoutsView: View {
                         }
                     }
             }
-            .navigationTitle(Text("New Workout"))
+        }
+        .sheet(isPresented: $isPresentingSettingsView) {
+            NavigationView {
+                SettingsView(settings: $settings)
+                    .navigationTitle(Text("Settings"))
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") {
+                                isPresentingSettingsView = false
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Save") {
+                                settingsSaveAction()
+                            }
+                        }
+                    }
+            }
         }
     }
 }
 
-
-
 struct WorkoutsView_Preview: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            WorkoutsView(workouts: .constant(Workout.sampleData), saveAction: {})
+            WorkoutsView(workouts: .constant(Workout.sampleData), settings: .constant(Settings()), saveAction: {}, settingsSaveAction: {})
         }
     }
 }
