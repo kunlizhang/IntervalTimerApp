@@ -620,7 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
 				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;
@@ -650,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
 				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;

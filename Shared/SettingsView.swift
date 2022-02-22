@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @Binding var settings: Settings
+    @Binding var settingsData: Settings.Data
     
     var body: some View {
         Form {
             Section {
-                Picker("Beep countdown", selection: $settings.beepLength) {
+                Picker("Beep countdown", selection: $settingsData.beepLength) {
                     Text("3 seconds").tag(Settings.BeepLength.threeSec)
                     Text("5 seconds").tag(Settings.BeepLength.fiveSec)
                 }
@@ -24,6 +24,6 @@ struct SettingsView: View {
 
 struct SettingsView_Preview: PreviewProvider {
     static var previews: some View {
-        SettingsView(settings: .constant(Settings()))
+        SettingsView(settingsData: .constant(Settings.Data()))
     }
 }

@@ -18,3 +18,21 @@ struct Settings: Codable {
         self.beepLength = beepLength
     }
 }
+
+extension Settings {
+    struct Data {
+        var beepLength: BeepLength = .threeSec
+    }
+    
+    init(data: Data) {
+        self.beepLength = data.beepLength
+    }
+    
+    var data: Data {
+        Data(beepLength: beepLength)
+    }
+    
+    mutating func update(from data: Data) {
+        self.beepLength = data.beepLength
+    }
+}

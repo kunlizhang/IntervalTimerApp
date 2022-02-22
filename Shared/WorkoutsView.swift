@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutsView: View {
     @Binding var workouts: [Workout]
     @Binding var settings: Settings
+    @State var newSettings = Settings.Data()
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewWorkoutView = false
     @State private var isPresentingSettingsView = false
@@ -101,7 +102,7 @@ struct WorkoutsView: View {
         }
         .sheet(isPresented: $isPresentingSettingsView) {
             NavigationView {
-                SettingsView(settings: $settings)
+                SettingsView(settingsData: $newSettings)
                     .navigationTitle(Text("Settings"))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -111,11 +112,15 @@ struct WorkoutsView: View {
                         }
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Save") {
+                                settings.update(from: newSettings)
                                 settingsSaveAction()
                                 isPresentingSettingsView = false
                             }
                         }
                     }
+            }
+            .onAppear {
+                newSettings = settings.data
             }
         }
     }
