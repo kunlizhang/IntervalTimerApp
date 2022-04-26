@@ -30,19 +30,29 @@ struct WorkoutsView: View {
                         .font(.headline)
                 }
             }
-            Section(footer: Text("Tap and hold to rearrange workouts")) {
+            Section(header: HStack {
+                Text("Saved Workouts")
+                padding()
+                Button(action: {
+                    if moveWorkouts == .inactive {
+                        moveWorkouts = .active
+                    } else {
+                        moveWorkouts = .inactive
+                    }
+                }, label: {
+                    if moveWorkouts == .inactive {
+                        Text("Edit")
+                    } else {
+                        Text("Done")
+                    }
+                }
+                )
+            }) {
                 ForEach($workouts) { $workout in
                     NavigationLink(destination: DetailView(workout: $workout, settings: $settings) ) {
                         CardView(workout: workout)
                     }
                     .listRowBackground(workout.theme.mainColor)
-                    .onLongPressGesture {
-                        if moveWorkouts == .active {
-                            moveWorkouts = .inactive
-                        } else {
-                            moveWorkouts = .active
-                        }
-                    }
                 }
                 .onDelete { offsets in
                     workouts.remove(atOffsets: offsets)

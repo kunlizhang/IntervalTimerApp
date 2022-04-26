@@ -66,8 +66,23 @@ struct DetailEditView: View {
                 }
             }
             Section(
-                header: Text("Exercises (\(data.exercises.count))"),
-                footer: Text("Press and hold to rearrange exercises")
+                header: HStack {
+                    Text("Exercises (\(data.exercises.count))")
+                    padding()
+                    Button(action: {
+                        if editExercises == .inactive {
+                            editExercises = .active
+                        } else {
+                            editExercises = .inactive
+                        }
+                    }, label: {
+                        if editExercises == .inactive {
+                            Text("Edit")
+                        } else {
+                            Text("Done")
+                        }
+                    })
+                }
             ) {
                 ForEach(data.exercises) { exercise in
                     Text(exercise.name)
@@ -77,13 +92,6 @@ struct DetailEditView: View {
                 }
                 .onMove {
                     data.exercises.move(fromOffsets: $0, toOffset: $1)
-                }
-                .onLongPressGesture {
-                    if editExercises == .active {
-                        editExercises = .inactive
-                    } else {
-                        editExercises = .active
-                    }
                 }
                 HStack {
                     TextField("New Exercise", text: $newExerciseName)
