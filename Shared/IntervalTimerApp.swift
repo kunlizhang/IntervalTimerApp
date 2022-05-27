@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 @main
 struct IntervalTimerApp: App {
@@ -46,6 +47,14 @@ struct IntervalTimerApp: App {
                 } catch {
                     fatalError("Error loading settings.")
                 }
+            }
+            .task {
+                do {
+                    GADMobileAds.sharedInstance().start(completionHandler: nil)
+                } catch {
+                    fatalError("Google Ads not loading")
+                }
+                
             }
         }
     }

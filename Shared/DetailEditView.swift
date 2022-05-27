@@ -43,8 +43,17 @@ struct DetailEditView: View {
                         Text("\(Int(data.restBetweenSets))s rest")
                             .accessibilityHidden(true)
                     }
+                    HStack {
+                        Picker("Theme", selection: $data.theme) {
+                            ForEach(Theme.allCases) { theme in
+                                ThemeView(theme: theme)
+                                    .tag(theme)
+                            }
+                        }
+                    }
                 }
             }
+            
             Section(header: Text("For each set")) {
                 HStack {
                     Slider(value: $data.workTime, in: 5...120, step: 5) {
@@ -65,6 +74,7 @@ struct DetailEditView: View {
                         .accessibilityHidden(true)
                 }
             }
+            
             Section(
                 header: HStack {
                     Text("Exercises (\(data.exercises.count))")
@@ -77,7 +87,7 @@ struct DetailEditView: View {
                         }
                     }, label: {
                         if editExercises == .inactive {
-                            Text("Edit")
+                            Text("Edit Exercises")
                         } else {
                             Text("Done")
                         }

@@ -45,8 +45,7 @@ struct WorkoutsView: View {
                     } else {
                         Text("Done")
                     }
-                }
-                )
+                })
             }) {
                 ForEach($workouts) { $workout in
                     NavigationLink(destination: DetailView(workout: $workout, settings: $settings) ) {
@@ -63,28 +62,11 @@ struct WorkoutsView: View {
                     saveAction()
                 }
             }
-        }
-        .environment(\.editMode, $moveWorkouts)
-        .navigationTitle("Workouts")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    isPresentingNewWorkoutView = true
-                }) {
-                    Image(systemName: "plus")
-                }
-                .accessibilityLabel("New Workout")
-            }
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    isPresentingSettingsView = true
-                }) {
-                    Image(systemName: "gearshape.fill")
-                }
-            }
-        }
-        .onChange(of: scenePhase) { phase in
-            if phase == .inactive { saveAction() }
+//            Section {
+//                HStack(alignment: .center) {
+//                    Banner()
+//                }
+//            }
         }
         .sheet(isPresented: $isPresentingNewWorkoutView) {
             NavigationView {
@@ -132,6 +114,28 @@ struct WorkoutsView: View {
             .onAppear {
                 newSettings = settings.data
             }
+        }
+        .environment(\.editMode, $moveWorkouts)
+        .navigationTitle("Workouts")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    isPresentingNewWorkoutView = true
+                }) {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("New Workout")
+            }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    isPresentingSettingsView = true
+                }) {
+                    Image(systemName: "gearshape.fill")
+                }
+            }
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PostWorkoutView: View {
+    @State var showAd: Bool = true
     @Binding var workout: Workout
     
     private func timeFormatString(timeInSeconds: Int) -> String {
@@ -51,6 +52,7 @@ struct PostWorkoutView: View {
             }
         }
         .navigationTitle(workout.title)
+        .presentInterstitialAd(isPresented: $showAd, adUnitId: "ca-app-pub-3940256099942544/4411468910")
     }
 }
 

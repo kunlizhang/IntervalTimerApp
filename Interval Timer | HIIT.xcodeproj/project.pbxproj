@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5259113F510C36561348B3DA /* Pods_Interval_Timer___HIIT__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07E449EF288FB499E8D190C /* Pods_Interval_Timer___HIIT__macOS_.framework */; };
 		8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */; };
 		8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */; };
 		870C237827B8944B008C1298 /* Beep2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 870C237627B8944B008C1298 /* Beep2.mp3 */; };
@@ -37,10 +38,14 @@
 		871E42C2279B2732007AC0DE /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42C0279B2731007AC0DE /* TimerView.swift */; };
 		871E42C4279B2A08007AC0DE /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42C3279B2A08007AC0DE /* DetailEditView.swift */; };
 		871E42C5279B2A08007AC0DE /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42C3279B2A08007AC0DE /* DetailEditView.swift */; };
+		8750D6282818BC91008AB2BA /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750D6272818BC91008AB2BA /* BannerAd.swift */; };
+		8750D6292818BC91008AB2BA /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8750D6272818BC91008AB2BA /* BannerAd.swift */; };
 		875760A5279E36C9009AD86C /* WorkoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875760A4279E36C9009AD86C /* WorkoutTimer.swift */; };
 		875760A6279E36C9009AD86C /* WorkoutTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875760A4279E36C9009AD86C /* WorkoutTimer.swift */; };
 		875CA5E4279DF6860037AA13 /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */; };
 		875CA5E5279DF6860037AA13 /* TimerHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */; };
+		876521DD28405386006A3C73 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876521DC28405386006A3C73 /* ThemeView.swift */; };
+		876521DE28405386006A3C73 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 876521DC28405386006A3C73 /* ThemeView.swift */; };
 		87724A4E27A315BB007C8628 /* TimerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87724A4D27A315BB007C8628 /* TimerTimerView.swift */; };
 		87724A4F27A315BB007C8628 /* TimerTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87724A4D27A315BB007C8628 /* TimerTimerView.swift */; };
 		877C945D27B0A5E600DD7688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877C945C27B0A5E600DD7688 /* Assets.xcassets */; };
@@ -51,6 +56,12 @@
 		879BCF0727A1ED7B002D25FD /* TimerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */; };
 		87A17AB927A31DC0009B47F7 /* TimerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A17AB827A31DC0009B47F7 /* TimerArc.swift */; };
 		87A17ABA27A31DC0009B47F7 /* TimerArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A17AB827A31DC0009B47F7 /* TimerArc.swift */; };
+		87B026A128198A0600985B39 /* InterstitialAdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B026A028198A0600985B39 /* InterstitialAdObject.swift */; };
+		87B026A228198A0600985B39 /* InterstitialAdObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B026A028198A0600985B39 /* InterstitialAdObject.swift */; };
+		87B026A428198B7100985B39 /* InterstitialAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B026A328198B7100985B39 /* InterstitialAdView.swift */; };
+		87B026A528198B7100985B39 /* InterstitialAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B026A328198B7100985B39 /* InterstitialAdView.swift */; };
+		87B026A7281992CC00985B39 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B026A6281992CC00985B39 /* FullScreenModifier.swift */; };
+		87B026A8281992CC00985B39 /* FullScreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B026A6281992CC00985B39 /* FullScreenModifier.swift */; };
 		87CACC1327C337FC006ED6E9 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1227C337FC006ED6E9 /* SettingsStore.swift */; };
 		87CACC1427C337FC006ED6E9 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1227C337FC006ED6E9 /* SettingsStore.swift */; };
 		87CACC1627C3384D006ED6E9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1527C3384D006ED6E9 /* Settings.swift */; };
@@ -59,6 +70,7 @@
 		87CACC1A27C33EC6006ED6E9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CACC1827C33EC6006ED6E9 /* SettingsView.swift */; };
 		87D77E0F27A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */; };
 		87D77E1027A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */; };
+		C52DF26A22B3289127C3DCB6 /* Pods_Interval_Timer___HIIT__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC15A47BFC4EA7E70DB0BA8 /* Pods_Interval_Timer___HIIT__iOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +91,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F7582535786C724021F451D /* Pods-Interval Timer | HIIT (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interval Timer | HIIT (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Interval Timer | HIIT (iOS)/Pods-Interval Timer | HIIT (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		4DC15A47BFC4EA7E70DB0BA8 /* Pods_Interval_Timer___HIIT__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Interval_Timer___HIIT__iOS_.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		671F4B448240FFAA4804EFDB /* Pods-Interval Timer | HIIT (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interval Timer | HIIT (iOS).release.xcconfig"; path = "Target Support Files/Pods-Interval Timer | HIIT (iOS)/Pods-Interval Timer | HIIT (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		7F31C10B7BE7DF63CAB739ED /* Pods-Interval Timer | HIIT (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interval Timer | HIIT (macOS).release.xcconfig"; path = "Target Support Files/Pods-Interval Timer | HIIT (macOS)/Pods-Interval Timer | HIIT (macOS).release.xcconfig"; sourceTree = "<group>"; };
 		8706981027A9A16300ADF4D1 /* PostWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkoutView.swift; sourceTree = "<group>"; };
 		870C237627B8944B008C1298 /* Beep2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep2.mp3; sourceTree = SOURCE_ROOT; };
 		870C237727B8944B008C1298 /* Beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep1.mp3; sourceTree = SOURCE_ROOT; };
@@ -101,17 +117,25 @@
 		871E42BD279B20F3007AC0DE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		871E42C0279B2731007AC0DE /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		871E42C3279B2A08007AC0DE /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
+		8750D6262818A257008AB2BA /* Interval-Timer---HIIT--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Interval-Timer---HIIT--iOS--Info.plist"; sourceTree = "<group>"; };
+		8750D6272818BC91008AB2BA /* BannerAd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
 		875760A4279E36C9009AD86C /* WorkoutTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTimer.swift; sourceTree = "<group>"; };
 		875CA5E3279DF6860037AA13 /* TimerHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHeaderView.swift; sourceTree = "<group>"; };
+		876521DC28405386006A3C73 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		87724A4D27A315BB007C8628 /* TimerTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTimerView.swift; sourceTree = "<group>"; };
 		877C945C27B0A5E600DD7688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		8789D81127A237450033DAD0 /* WorkoutStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStore.swift; sourceTree = "<group>"; };
 		879BCF0527A1ED7B002D25FD /* TimerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerFooterView.swift; sourceTree = "<group>"; };
 		87A17AB827A31DC0009B47F7 /* TimerArc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerArc.swift; sourceTree = "<group>"; };
+		87B026A028198A0600985B39 /* InterstitialAdObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdObject.swift; sourceTree = "<group>"; };
+		87B026A328198B7100985B39 /* InterstitialAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAdView.swift; sourceTree = "<group>"; };
+		87B026A6281992CC00985B39 /* FullScreenModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModifier.swift; sourceTree = "<group>"; };
 		87CACC1227C337FC006ED6E9 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		87CACC1527C3384D006ED6E9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		87CACC1827C33EC6006ED6E9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		87D77E0E27A873CC0066F8FA /* NewQuickWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuickWorkoutView.swift; sourceTree = "<group>"; };
+		A07E449EF288FB499E8D190C /* Pods_Interval_Timer___HIIT__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_Interval_Timer___HIIT__macOS_.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EF7B9F2845B1B607CC8993 /* Pods-Interval Timer | HIIT (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interval Timer | HIIT (macOS).debug.xcconfig"; path = "Target Support Files/Pods-Interval Timer | HIIT (macOS)/Pods-Interval Timer | HIIT (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52DF26A22B3289127C3DCB6 /* Pods_Interval_Timer___HIIT__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5259113F510C36561348B3DA /* Pods_Interval_Timer___HIIT__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +172,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BBF50CA709B7712BD49D751 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F7582535786C724021F451D /* Pods-Interval Timer | HIIT (iOS).debug.xcconfig */,
+				671F4B448240FFAA4804EFDB /* Pods-Interval Timer | HIIT (iOS).release.xcconfig */,
+				F4EF7B9F2845B1B607CC8993 /* Pods-Interval Timer | HIIT (macOS).debug.xcconfig */,
+				7F31C10B7BE7DF63CAB739ED /* Pods-Interval Timer | HIIT (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7A7C64FECCB7F7F8332D4C36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A07E449EF288FB499E8D190C /* Pods_Interval_Timer___HIIT__macOS_.framework */,
+				4DC15A47BFC4EA7E70DB0BA8 /* Pods_Interval_Timer___HIIT__iOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		871E4261279A6D79007AC0DE = {
 			isa = PBXGroup;
 			children = (
+				8750D6262818A257008AB2BA /* Interval-Timer---HIIT--iOS--Info.plist */,
 				871E4266279A6D79007AC0DE /* Shared */,
 				871E4275279A6D7A007AC0DE /* macOS */,
 				871E427E279A6D7A007AC0DE /* Tests iOS */,
 				871E428A279A6D7A007AC0DE /* Tests macOS */,
 				871E426F279A6D7A007AC0DE /* Products */,
+				1BBF50CA709B7712BD49D751 /* Pods */,
+				7A7C64FECCB7F7F8332D4C36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +224,7 @@
 				870C237627B8944B008C1298 /* Beep2.mp3 */,
 				877C945C27B0A5E600DD7688 /* Assets.xcassets */,
 				87CACC1827C33EC6006ED6E9 /* SettingsView.swift */,
+				876521DC28405386006A3C73 /* ThemeView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -219,6 +269,10 @@
 		871E42B0279A701E007AC0DE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8750D6272818BC91008AB2BA /* BannerAd.swift */,
+				87B026A028198A0600985B39 /* InterstitialAdObject.swift */,
+				87B026A328198B7100985B39 /* InterstitialAdView.swift */,
+				87B026A6281992CC00985B39 /* FullScreenModifier.swift */,
 				875760A4279E36C9009AD86C /* WorkoutTimer.swift */,
 				871E42AD279A6FFE007AC0DE /* Theme.swift */,
 				871E42B1279A7039007AC0DE /* Workout.swift */,
@@ -248,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 871E4297279A6D7A007AC0DE /* Build configuration list for PBXNativeTarget "Interval Timer | HIIT (iOS)" */;
 			buildPhases = (
+				DA1351BA7643448796A903C6 /* [CP] Check Pods Manifest.lock */,
 				871E426A279A6D7A007AC0DE /* Sources */,
 				871E426B279A6D7A007AC0DE /* Frameworks */,
 				871E426C279A6D7A007AC0DE /* Resources */,
+				F637C6B64E359BA7D5BE3B1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +321,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 871E429A279A6D7A007AC0DE /* Build configuration list for PBXNativeTarget "Interval Timer | HIIT (macOS)" */;
 			buildPhases = (
+				887ABD09D5DB052ACB396F65 /* [CP] Check Pods Manifest.lock */,
 				871E4270279A6D7A007AC0DE /* Sources */,
 				871E4271279A6D7A007AC0DE /* Frameworks */,
 				871E4272279A6D7A007AC0DE /* Resources */,
@@ -398,23 +455,92 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		887ABD09D5DB052ACB396F65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Interval Timer | HIIT (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA1351BA7643448796A903C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Interval Timer | HIIT (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F637C6B64E359BA7D5BE3B1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interval Timer | HIIT (iOS)/Pods-Interval Timer | HIIT (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interval Timer | HIIT (iOS)/Pods-Interval Timer | HIIT (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interval Timer | HIIT (iOS)/Pods-Interval Timer | HIIT (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		871E426A279A6D7A007AC0DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B026A128198A0600985B39 /* InterstitialAdObject.swift in Sources */,
 				87CACC1927C33EC6006ED6E9 /* SettingsView.swift in Sources */,
 				87A17AB927A31DC0009B47F7 /* TimerArc.swift in Sources */,
 				87D77E0F27A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */,
 				871E42C1279B2732007AC0DE /* TimerView.swift in Sources */,
 				871E42AE279A6FFF007AC0DE /* Theme.swift in Sources */,
 				871E42BE279B20F3007AC0DE /* DetailView.swift in Sources */,
+				87B026A428198B7100985B39 /* InterstitialAdView.swift in Sources */,
+				8750D6282818BC91008AB2BA /* BannerAd.swift in Sources */,
 				879BCF0627A1ED7B002D25FD /* TimerFooterView.swift in Sources */,
 				871E42B8279B0FDA007AC0DE /* TrailingIconLabelStyle.swift in Sources */,
 				871E4291279A6D7A007AC0DE /* ContentView.swift in Sources */,
 				8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
+				87B026A7281992CC00985B39 /* FullScreenModifier.swift in Sources */,
 				871E428F279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
 				871E42B2279A7039007AC0DE /* Workout.swift in Sources */,
+				876521DD28405386006A3C73 /* ThemeView.swift in Sources */,
 				87CACC1327C337FC006ED6E9 /* SettingsStore.swift in Sources */,
 				871E42C4279B2A08007AC0DE /* DetailEditView.swift in Sources */,
 				871E42BB279B1314007AC0DE /* WorkoutsView.swift in Sources */,
@@ -431,18 +557,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87B026A228198A0600985B39 /* InterstitialAdObject.swift in Sources */,
 				87CACC1A27C33EC6006ED6E9 /* SettingsView.swift in Sources */,
 				87A17ABA27A31DC0009B47F7 /* TimerArc.swift in Sources */,
 				87D77E1027A873CC0066F8FA /* NewQuickWorkoutView.swift in Sources */,
 				871E42C2279B2732007AC0DE /* TimerView.swift in Sources */,
 				871E42AF279A6FFF007AC0DE /* Theme.swift in Sources */,
 				871E42BF279B20F3007AC0DE /* DetailView.swift in Sources */,
+				87B026A528198B7100985B39 /* InterstitialAdView.swift in Sources */,
+				8750D6292818BC91008AB2BA /* BannerAd.swift in Sources */,
 				879BCF0727A1ED7B002D25FD /* TimerFooterView.swift in Sources */,
 				871E42B9279B0FDA007AC0DE /* TrailingIconLabelStyle.swift in Sources */,
 				871E4292279A6D7A007AC0DE /* ContentView.swift in Sources */,
 				8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
+				87B026A8281992CC00985B39 /* FullScreenModifier.swift in Sources */,
 				871E4290279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
 				871E42B3279A7039007AC0DE /* Workout.swift in Sources */,
+				876521DE28405386006A3C73 /* ThemeView.swift in Sources */,
 				87CACC1427C337FC006ED6E9 /* SettingsStore.swift in Sources */,
 				871E42C5279B2A08007AC0DE /* DetailEditView.swift in Sources */,
 				871E42BC279B1314007AC0DE /* WorkoutsView.swift in Sources */,
@@ -602,6 +733,7 @@
 		};
 		871E4298279A6D7A007AC0DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F7582535786C724021F451D /* Pods-Interval Timer | HIIT (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -610,6 +742,7 @@
 				DEVELOPMENT_TEAM = 8H598YQX66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Interval-Timer---HIIT--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,6 +765,7 @@
 		};
 		871E4299279A6D7A007AC0DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 671F4B448240FFAA4804EFDB /* Pods-Interval Timer | HIIT (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -640,6 +774,7 @@
 				DEVELOPMENT_TEAM = 8H598YQX66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Interval-Timer---HIIT--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -663,6 +798,7 @@
 		};
 		871E429B279A6D7A007AC0DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4EF7B9F2845B1B607CC8993 /* Pods-Interval Timer | HIIT (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -691,6 +827,7 @@
 		};
 		871E429C279A6D7A007AC0DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F31C10B7BE7DF63CAB739ED /* Pods-Interval Timer | HIIT (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

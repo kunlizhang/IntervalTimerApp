@@ -53,6 +53,16 @@ struct DetailView: View {
                     Text("\(workout.sets)")
                 }
                 .accessibilityElement(children: .combine)
+                HStack {
+                    Label("Theme", systemImage: "paintpalette")
+                    Spacer()
+                    Text(workout.theme.name)
+                        .padding(4)
+                        .foregroundColor(workout.theme.accentColor)
+                        .background(workout.theme.mainColor)
+                        .cornerRadius(4)
+                }
+                .accessibilityElement(children: .combine)
             }
             Section(header: Text("Exercises (\(workout.exercises.count))")) {
                 ForEach(workout.exercises) { exercise in
