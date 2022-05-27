@@ -32,20 +32,20 @@ struct WorkoutsView: View {
             }
             Section(header: HStack {
                 Text("Saved Workouts")
-                padding()
-                Button(action: {
-                    if moveWorkouts == .inactive {
-                        moveWorkouts = .active
-                    } else {
-                        moveWorkouts = .inactive
-                    }
-                }, label: {
-                    if moveWorkouts == .inactive {
-                        Text("Edit")
-                    } else {
-                        Text("Done")
-                    }
-                })
+//                padding()
+//                Button(action: {
+//                    if moveWorkouts == .inactive {
+//                        moveWorkouts = .active
+//                    } else {
+//                        moveWorkouts = .inactive
+//                    }
+//                }, label: {
+//                    if moveWorkouts == .inactive {
+//                        Text("Edit")
+//                    } else {
+//                        Text("Done")
+//                    }
+//                })
             }) {
                 ForEach($workouts) { $workout in
                     NavigationLink(destination: DetailView(workout: $workout, settings: $settings) ) {
