@@ -73,6 +73,7 @@ extension Workout {
         restTime = Int(data.restTime)
         sets = Int(data.sets)
         restBetweenSets = Int(data.restBetweenSets)
+        theme = data.theme
     }
     
     init(data: Data) {
