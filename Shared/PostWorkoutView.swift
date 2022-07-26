@@ -35,19 +35,19 @@ struct PostWorkoutView: View {
                 HStack {
                     Label("Total work time", systemImage: "timer")
                     Spacer()
-                    Text(timeFormatString(timeInSeconds: workout.workTime*workout.sets*workout.exercises.count))
+                    Text(timeFormatString(timeInSeconds: workout.workTime*workout.sets*workout.exercises.list.count))
                 }
                 .accessibilityElement(children: .combine)
                 HStack {
                     Label("Number of exercises", systemImage: "figure.walk")
                     Spacer()
-                    Text("\(workout.exercises.count)")
+                    Text("\(workout.exercises.list.count)")
                 }
                 .accessibilityElement(children: .combine)
             }
             Section(header: Text("Exercises")) {
-                ForEach(workout.exercises) { exercise in
-                    Label(exercise.name, systemImage: "figure.walk")
+                List(workout.exercises.list) { exercise in
+                    Label(exercise, systemImage: "figure.walk")
                 }
             }
         }

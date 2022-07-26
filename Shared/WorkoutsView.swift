@@ -87,7 +87,7 @@ struct WorkoutsView: View {
                                 isPresentingNewWorkoutView = false
                                 newWorkoutData = Workout.Data()
                             }
-                            .disabled(newWorkoutData.exercises.count == 0 || newWorkoutData.title == "")
+                            .disabled(newWorkoutData.exercises.list.count == 0 || newWorkoutData.title == "")
                         }
                     }
             }

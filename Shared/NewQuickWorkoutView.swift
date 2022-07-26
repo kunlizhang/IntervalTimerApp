@@ -22,7 +22,7 @@ struct NewQuickWorkoutView: View {
     }
     
     private var getExercisesText: String {
-        if data.exercises.count == 1 {
+        if data.exercises.list.count == 1 {
             return "exercise"
         } else {
             return "exercises"
@@ -76,9 +76,9 @@ struct NewQuickWorkoutView: View {
                     Slider(value: Binding(
                         get: { self.exerciseCount },
                         set: { (newVal) in
-                            data.exercises = []
+                            data.exercises.list = []
                             for index in 1...Int(newVal) {
-                                data.exercises.append(Workout.Exercise(name: "Exercise \(index)"))
+                                data.exercises.list.append("Exercise \(index)")
                             }
                             workout.update(from: data)
                             self.exerciseCount = newVal

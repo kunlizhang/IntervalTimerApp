@@ -18,7 +18,7 @@ class WorkoutTimer: ObservableObject {
     @Published var currExercise = ""
     @Published var secondsElapsed = Double(0)
     @Published var secondsRemaining = Double(0)
-    private(set) var exercises: [Exercise] = []
+    private(set) var exercises: [String] = []
     
     /// A closure that is executed when the exercise changes
     var exerciseChangedAction: (() -> Void)?
@@ -51,7 +51,7 @@ class WorkoutTimer: ObservableObject {
     
     let audioSession = AVAudioSession.sharedInstance()
     
-    init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: [Workout.Exercise] = [], beepTime: Settings.BeepLength = Settings.BeepLength.threeSec) {
+    init(workTime: Int = 0, restTime: Int = 0, restBetweenSets: Int = 0, sets: Int = 1, exercises: Exercises = Exercises(list: []), beepTime: Settings.BeepLength = Settings.BeepLength.threeSec) {
         do {
             // Set the audio session category, mode, and options.
             try audioSession.setCategory(.playback)
@@ -63,7 +63,7 @@ class WorkoutTimer: ObservableObject {
         self.restTime = restTime
         self.restBetweenSets = restBetweenSets
         self.sets = sets
-        self.exercises = exercises.exercises
+        self.exercises = exercises.list
         self.secondsRemaining = Double(((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1)))
         switch (beepTime) {
         case .threeSec:
@@ -104,7 +104,7 @@ class WorkoutTimer: ObservableObject {
         totalSectionTime = Double(workTime)
         guard index < exercises.count else { return }
         exerciseIndex = index
-        currExercise = exercises[exerciseIndex].name
+        currExercise = exercises[exerciseIndex]
         countdownBeep(length: workTime)
         timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { timer in
             self.secondsElapsedForSection += self.frequency
@@ -161,7 +161,7 @@ class WorkoutTimer: ObservableObject {
         }
     }
     
-    func reset(workTime: Int, restTime: Int, restBetweenSets: Int, sets: Int, exercises: [Workout.Exercise], beepTime: Settings.BeepLength) {
+    func reset(workTime: Int, restTime: Int, restBetweenSets: Int, sets: Int, exercises: Exercises, beepTime: Settings.BeepLength) {
         do {
             // Set the audio session category, mode, and options.
             try audioSession.setCategory(.playback)
@@ -173,7 +173,7 @@ class WorkoutTimer: ObservableObject {
         self.restTime = restTime
         self.restBetweenSets = restBetweenSets
         self.sets = sets
-        self.exercises = exercises.exercises
+        self.exercises = exercises.list
         self.secondsRemaining = Double((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
         switch (beepTime) {
         case .threeSec:
@@ -181,8 +181,7 @@ class WorkoutTimer: ObservableObject {
         case .fiveSec:
             self.beepTime = 5
         }
-        currExercise = exercises[0].name
-    }
+        currExercise = exercises.list[0]}
 }
 
 extension Workout {
@@ -191,12 +190,12 @@ extension Workout {
     }
 }
 
-extension Array where Element == Workout.Exercise {
+extension Array where Element == String {
     var exercises: [WorkoutTimer.Exercise] {
         if isEmpty {
             return [WorkoutTimer.Exercise(name: "Exercise 1")]
         } else {
-            return map { WorkoutTimer.Exercise(name: $0.name)}
+            return map { WorkoutTimer.Exercise(name: $0)}
         }
     }
 }

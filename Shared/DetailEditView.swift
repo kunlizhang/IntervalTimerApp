@@ -77,7 +77,7 @@ struct DetailEditView: View {
             
             Section(
                 header: HStack {
-                    Text("Exercises (\(data.exercises.count))")
+                    Text("Exercises (\(data.exercises.list.count))")
                     padding()
                     Button(action: {
                         if editExercises == .inactive {
@@ -94,21 +94,14 @@ struct DetailEditView: View {
                     })
                 }
             ) {
-                ForEach(data.exercises) { exercise in
-                    Text(exercise.name)
-                }
-                .onDelete { indices in
-                    data.exercises.remove(atOffsets: indices)
-                }
-                .onMove {
-                    data.exercises.move(fromOffsets: $0, toOffset: $1)
+                List(data.exercises.list) { exercise in
+                    Text(exercise)
                 }
                 HStack {
                     TextField("New Exercise", text: $newExerciseName)
                     Button(action: {
                         withAnimation {
-                            let exercise = Workout.Exercise(name: newExerciseName)
-                            data.exercises.append(exercise)
+                            data.exercises.list.append(newExerciseName)
                             newExerciseName = ""
                         }
                     }) {

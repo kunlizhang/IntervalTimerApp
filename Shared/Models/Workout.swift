@@ -10,7 +10,7 @@ import Foundation
 struct Workout: Identifiable, Codable {
     let id: UUID
     var title: String
-    var exercises: [Exercise]
+    var exercises: Exercises
     var workTime: Int
     var restTime: Int
     var sets: Int
@@ -20,7 +20,7 @@ struct Workout: Identifiable, Codable {
     init(id: UUID = UUID(), title: String, exercises: [String], workTime: Int, restTime: Int, sets: Int, restBetweenSets: Int, theme: Theme) {
         self.id = id
         self.title = title
-        self.exercises = exercises.map { Exercise(name: $0) }
+        self.exercises = Exercises(list: exercises)
         self.workTime = workTime
         self.restTime = restTime
         self.sets = sets
@@ -29,7 +29,7 @@ struct Workout: Identifiable, Codable {
     }
     
     public var lengthString: String {
-        let timeInSeconds = ((self.workTime * self.exercises.count + self.restTime * (self.exercises.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
+        let timeInSeconds = ((self.workTime * self.exercises.list.count + self.restTime * (self.exercises.list.count - 1)) * (self.sets) + self.restBetweenSets * (self.sets - 1))
         var seconds: String
         if timeInSeconds % 60 < 10 {
             seconds = "0\(timeInSeconds % 60)"
@@ -41,19 +41,9 @@ struct Workout: Identifiable, Codable {
 }
 
 extension Workout {
-    struct Exercise: Identifiable, Codable{
-        var id: UUID
-        var name: String
-        
-        init(id: UUID = UUID(), name: String) {
-            self.id = id
-            self.name = name
-        }
-    }
-    
     struct Data {
         var title: String = ""
-        var exercises: [Exercise] = []
+        var exercises: Exercises = Exercises(list: [])
         var workTime: Double = 30
         var restTime: Double = 30
         var sets: Double = 1

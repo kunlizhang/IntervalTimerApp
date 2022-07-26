@@ -17,8 +17,8 @@ struct CardView: View {
                 .accessibilityAddTraits(.isHeader)
             Spacer()
             HStack {
-                Label("\(workout.exercises.count)", systemImage: "figure.walk")
-                    .accessibilityLabel("\(workout.exercises.count) exercises")
+                Label("\(workout.exercises.list.count)", systemImage: "figure.walk")
+                    .accessibilityLabel("\(workout.exercises.list.count) exercises")
                 Spacer()
                 Label(workout.lengthString, systemImage: "clock")
                     .padding(.trailing, 20)

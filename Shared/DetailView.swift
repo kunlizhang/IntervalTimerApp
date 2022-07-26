@@ -64,9 +64,9 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
-            Section(header: Text("Exercises (\(workout.exercises.count))")) {
-                ForEach(workout.exercises) { exercise in
-                    Label(exercise.name, systemImage: "figure.walk")
+            Section(header: Text("Exercises (\(workout.exercises.list.count))")) {
+                List(workout.exercises.list) { exercise in
+                    Label(exercise, systemImage: "figure.walk")
                 }
             }
         }
