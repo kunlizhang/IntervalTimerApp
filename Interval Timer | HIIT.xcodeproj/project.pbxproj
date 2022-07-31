@@ -735,7 +735,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F7582535786C724021F451D /* Pods-Interval Timer | HIIT (iOS).debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -767,7 +767,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 671F4B448240FFAA4804EFDB /* Pods-Interval Timer | HIIT (iOS).release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
