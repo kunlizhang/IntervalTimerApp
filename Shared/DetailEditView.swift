@@ -87,9 +87,9 @@ struct DetailEditView: View {
                         }
                     }, label: {
                         if editExercises == .inactive {
-                            Text("Edit Exercises")
+                            Text("Edit Exercises").font(.caption)
                         } else {
-                            Text("Done")
+                            Text("Done").font(.caption)
                         }
                     })
                 }

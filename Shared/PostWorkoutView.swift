@@ -52,7 +52,7 @@ struct PostWorkoutView: View {
             }
         }
         .navigationTitle(workout.title)
-        .presentInterstitialAd(isPresented: $showAd, adUnitId: "ca-app-pub-3940256099942544/4411468910")
+//        .presentInterstitialAd(isPresented: $showAd, adUnitId: "ca-app-pub-3940256099942544/4411468910")
     }
 }
 

@@ -20,8 +20,6 @@
 		871E428E279A6D7A007AC0DE /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E428D279A6D7A007AC0DE /* Tests_macOSLaunchTests.swift */; };
 		871E428F279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */; };
 		871E4290279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */; };
-		871E4291279A6D7A007AC0DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4268279A6D79007AC0DE /* ContentView.swift */; };
-		871E4292279A6D7A007AC0DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E4268279A6D79007AC0DE /* ContentView.swift */; };
 		871E42AE279A6FFF007AC0DE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42AD279A6FFE007AC0DE /* Theme.swift */; };
 		871E42AF279A6FFF007AC0DE /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42AD279A6FFE007AC0DE /* Theme.swift */; };
 		871E42B2279A7039007AC0DE /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E42B1279A7039007AC0DE /* Workout.swift */; };
@@ -99,7 +97,6 @@
 		870C237627B8944B008C1298 /* Beep2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep2.mp3; sourceTree = SOURCE_ROOT; };
 		870C237727B8944B008C1298 /* Beep1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep1.mp3; sourceTree = SOURCE_ROOT; };
 		871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimerApp.swift; sourceTree = "<group>"; };
-		871E4268279A6D79007AC0DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		871E426E279A6D7A007AC0DE /* Interval Timer | HIIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer | HIIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E4274279A6D7A007AC0DE /* Interval Timer | HIIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interval Timer | HIIT.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E4276279A6D7A007AC0DE /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -212,7 +209,6 @@
 				87CACC1127C33627006ED6E9 /* Timer */,
 				871E42B0279A701E007AC0DE /* Models */,
 				871E42B4279A7228007AC0DE /* CardView.swift */,
-				871E4268279A6D79007AC0DE /* ContentView.swift */,
 				871E42C3279B2A08007AC0DE /* DetailEditView.swift */,
 				871E42BD279B20F3007AC0DE /* DetailView.swift */,
 				871E4267279A6D79007AC0DE /* IntervalTimerApp.swift */,
@@ -535,7 +531,6 @@
 				8750D6282818BC91008AB2BA /* BannerAd.swift in Sources */,
 				879BCF0627A1ED7B002D25FD /* TimerFooterView.swift in Sources */,
 				871E42B8279B0FDA007AC0DE /* TrailingIconLabelStyle.swift in Sources */,
-				871E4291279A6D7A007AC0DE /* ContentView.swift in Sources */,
 				8706981127A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
 				87B026A7281992CC00985B39 /* FullScreenModifier.swift in Sources */,
 				871E428F279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
@@ -568,7 +563,6 @@
 				8750D6292818BC91008AB2BA /* BannerAd.swift in Sources */,
 				879BCF0727A1ED7B002D25FD /* TimerFooterView.swift in Sources */,
 				871E42B9279B0FDA007AC0DE /* TrailingIconLabelStyle.swift in Sources */,
-				871E4292279A6D7A007AC0DE /* ContentView.swift in Sources */,
 				8706981227A9A16300ADF4D1 /* PostWorkoutView.swift in Sources */,
 				87B026A8281992CC00985B39 /* FullScreenModifier.swift in Sources */,
 				871E4290279A6D7A007AC0DE /* IntervalTimerApp.swift in Sources */,
@@ -753,7 +747,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.2;
+				MARKETING_VERSION = 2.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
 				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;
@@ -785,7 +779,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.4.2;
+				MARKETING_VERSION = 2.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = MyApps.IntervalTimer;
 				PRODUCT_NAME = "Interval Timer | HIIT";
 				SDKROOT = iphoneos;
